@@ -1,8 +1,9 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import lanAr from "../Data/locale/lanAr";
-import lanEn from "../Data/locale/lanEn";
-
+// import lanAr from "./lanAr.json";
+// import lanEn from "./lanEr.json";
+import lanAr from "../data/locale/lanAr.json";
+import lanEn from "../data/locale/lanEn.json";
 const resources = {
   en: {
     translation: lanEn
