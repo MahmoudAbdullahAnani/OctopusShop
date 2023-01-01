@@ -1,18 +1,18 @@
-import '../styles/globals.css'
-import "./../Data/i18n";
+import "../styles/globals.css";
+import "../i18n";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import { Fragment } from 'react';
-import Navbar from '../components/Nabar';
-import Footer from '../components/Footer';
+import { Fragment } from "react";
+import Navbar from "../components/Nabar";
+import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
-      <Navbar/>
+      <Navbar />
       <Component {...pageProps} />
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 }
 
-export default MyApp
+export default MyApp;
