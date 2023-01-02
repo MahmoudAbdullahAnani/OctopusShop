@@ -5,7 +5,7 @@ import Navbar from "../components/Nabar";
 import Footer from "../components/Footer";
 import "../Data/i118n";
 import { RecoilRoot } from "recoil";
-
+import "animate.css";
 
 function MyApp({ Component, pageProps }) {
   return (

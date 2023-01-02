@@ -14,3 +14,20 @@ body {
   display: block;
     right: -120px;
 }
+.anyMated{
+  /*animation-name: animateAnyMated ;
+  */animation:  Mated infinite  reverse ;
+  -webkit-animation:  Mated infinite  reverse ;
+  position: relative;
+}
+
+@keyframes Mated{
+  0%{
+    top:100px;
+}
+  100%{
+    background-color: red;
+    position: relative;
+    top:-100px;
+}
+}
