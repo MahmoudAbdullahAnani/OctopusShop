@@ -1,14 +1,16 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Switch } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { trans } from "../pages/_app";
+import { useRecoilState } from "recoil";
+import textState from "../Data/AtomLang";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -16,9 +18,10 @@ function classNames(...classes) {
 
 export default function Navbar() {
   // Function Trans
+  // Use conText
+  // Get RecoilState
+  const [atomLang, setAtomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();
-  const [lang, setLang] = useState(false);
-
   const navigation = {
     categories: [
       {
@@ -133,7 +136,7 @@ export default function Navbar() {
   };
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-dark">
+    <div className="bg-dark drop-shadow-lg">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -207,7 +210,7 @@ export default function Navbar() {
                             <Link
                               href={item.href}
                               className={`mt-6 block font-medium text-gray-900 ${
-                                lang && "text-end"
+                                atomLang && "text-end"
                               }`}
                             >
                               <span
@@ -218,7 +221,7 @@ export default function Navbar() {
                             </Link>
                             <p
                               aria-hidden="true"
-                              className={`mt-1 ${lang && "text-end"}`}
+                              className={`mt-1 ${atomLang && "text-end"}`}
                             >
                               {t("Shop now")}
                             </p>
@@ -439,7 +442,7 @@ export default function Navbar() {
                                           <p
                                             id={`${section.name}-heading`}
                                             className={`font-medium text-gray-900 ${
-                                              lang ? "text-center" : ""
+                                              atomLang ? "text-center" : ""
                                             }`}
                                           >
                                             {section.name}
@@ -551,10 +554,10 @@ export default function Navbar() {
                 <div className=" lg:ml-8 lg:flex min-h-min items-center">
                   <span className="text-sky-400/100 min-h-min">EN</span>
                   <Switch
-                    checked={lang}
+                    checked={atomLang}
                     onClick={() => {
-                      lang ? setLang(false) : setLang(true);
-                      lang
+                      atomLang ? setAtomLang(false) : setAtomLang(true);
+                      atomLang
                         ? i18n.changeLanguage("en")
                         : i18n.changeLanguage("ar");
                     }}
