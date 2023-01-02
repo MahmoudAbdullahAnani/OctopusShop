@@ -489,11 +489,11 @@ export default function Navbar() {
                     </Link>
                   ))}
                   <div className="d-flex align-items-center justify-self-center">
-                    <div className="dropdown">
+                    <div className="dropdown togelStores">
                       <button
                         className=" dropdown-toggle"
                         type="button"
-                        id="dropdownMenuButton1"
+                        // id="dropdownMenuButton1"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
