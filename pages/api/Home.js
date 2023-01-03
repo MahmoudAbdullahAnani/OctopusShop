@@ -3,5 +3,17 @@
 import prodactHome from "../../Data/prodacts/Home";
 
 export default function handler(req, res) {
-  res.status(200).json(prodactHome)
+  if (req.method === "GET") {
+    res.status(200).json(prodactHome);
+    console.log("hello world! Get");
+  } else if (req.method === "POST") {
+    console.log(req.body.dataPush);
+    const data = req.body.dataPush;
+    const newCard = {
+      id: Date.now(),
+      ...data
+    };
+    prodactHome.push(newCard);
+    res.status(201).json(newCard);
+  }
 }

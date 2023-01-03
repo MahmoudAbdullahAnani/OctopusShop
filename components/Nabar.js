@@ -24,6 +24,7 @@ export default function Navbar() {
   const [t, i18n] = useTranslation();
   const navigation = {
     categories: [
+
       {
         id: "women",
         name: t("women"),
@@ -81,10 +82,6 @@ export default function Navbar() {
           {
             name: t("New Arrivals"),
             href: "#",
-            imageSrc:
-              "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
-            imageAlt:
-              "Drawstring top with elastic loop closure and textured interior padding.",
           },
         ],
         sections: [
@@ -131,12 +128,12 @@ export default function Navbar() {
     ],
     pages: [
       { name: t("Company"), href: "#" },
-      // { name: "Stores", href: "#" },
+      // { name: "Home", href: "/" },
     ],
   };
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-dark drop-shadow-lg fixed-top">
+    <div className="bg-dark drop-shadow-lg sticky-top">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -177,6 +174,12 @@ export default function Navbar() {
                 {/* Links */}
                 <Tab.Group as="div" className="mt-2">
                   <div className="border-b border-gray-200">
+                    <Link
+                      className="text-decoration-none  buttonHome"
+                      href={`/`}
+                    >
+                      Home
+                    </Link>
                     <Tab.List className="-mb-px flex space-x-8 px-4">
                       {navigation.categories.map((category) => (
                         <Tab
@@ -548,7 +551,7 @@ export default function Navbar() {
                   </Link>
                 </div>
 
-                <div className=" lg:ml-8 lg:flex min-h-min items-center">
+                <div className="d-flex lg:ml-8 lg:flex min-h-min items-center flex-nowrap">
                   <span className="text-sky-400/100 min-h-min">EN</span>
                   <Switch
                     checked={atomLang}
