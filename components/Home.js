@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
-import Galrye from "./Handeling/HandelProdectHome";
-import HomeCont from "./Handeling/HomeContent";
+import Example2 from "./Handeling/Card";
+import Galrye from "./Handeling/Galrye";
 
 const ProdctdefaultHome = () => {
   const router = useRouter();
   return (
     <fragment>
       <Galrye />
-      <HomeCont />
+      <Example2/>
     </fragment>
   );
 };

@@ -206,7 +206,6 @@ export default function Navbar() {
                             key={item.name}
                             className="group relative text-sm text-start"
                           >
-                            <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75"></div>
                             <Link
                               href={item.href}
                               className={`mt-6 block font-medium text-gray-900 ${
@@ -415,7 +414,6 @@ export default function Navbar() {
                                           key={item.name}
                                           className="group relative text-base sm:text-sm"
                                         >
-                                          <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75"></div>
                                           <Link
                                             href={item.href}
                                             className="mt-6 block font-medium text-gray-900"

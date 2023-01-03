@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com", "plus.unsplash.com", "fakestoreapi.com"],
+    domains: [
+      "images.unsplash.com",
+      "plus.unsplash.com",
+      "fakestoreapi.com",
+      "tailwindui.com",
+    ],
   },
   i18n: {
     locales: ["en", "ar"],
@@ -10,11 +15,11 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      {
-        source: "/api/Home",
-        destination: "/",
-        permanent: true,
-      },
+      // {
+      //   source: "/api/Home",
+      //   destination: "/",
+      //   permanent: true,
+      // },
       {
         source: "/i18n",
         destination: "/",
