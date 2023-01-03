@@ -6,10 +6,14 @@ import Footer from "../components/Footer";
 import "../Data/i118n";
 import { RecoilRoot } from "recoil";
 import "animate.css";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
+      <Head>
+        <title>Octopus Shop</title>
+      </Head>
       <RecoilRoot>
         <Navbar />
         <Component {...pageProps} />
