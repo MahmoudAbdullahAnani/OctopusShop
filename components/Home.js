@@ -4,10 +4,10 @@ import CardHome from '../components/Handeling/Card'
 const ProdctdefaultHome = () => {
   const router = useRouter();
   return (
-    <fragment>
+    <>
       <Galrye />
       <CardHome/>
-    </fragment>
+    </>
   );
 };
 

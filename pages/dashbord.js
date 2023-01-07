@@ -40,7 +40,6 @@ function dashpordAddProdect() {
       },
     });
     const data = await resProdect.json()
-    console.log(data);
   };
 
   // useEffect(() => {

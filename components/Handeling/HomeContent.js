@@ -40,7 +40,6 @@ const HomeCont = () => {
   const fetchData = async () => {
     const fetchData = await fetch(`./api/Home`);
     const data = await fetchData.json();
-    console.log(data);
   };
   useEffect(() => {
     fetchData();

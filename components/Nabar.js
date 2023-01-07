@@ -17,6 +17,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+
   // Function Trans
   // Use conText
   // Get RecoilState
@@ -24,7 +25,6 @@ export default function Navbar() {
   const [t, i18n] = useTranslation();
   const navigation = {
     categories: [
-
       {
         id: "women",
         name: t("women"),
@@ -126,10 +126,8 @@ export default function Navbar() {
         ],
       },
     ],
-    pages: [
-      { name: t("Company"), href: "#" },
-      // { name: "Home", href: "/" },
-    ],
+    Home: [{ name: t("Home"), href: "/" }],
+    pages: [{ name: t("Company"), href: "#" }],
   };
   const [open, setOpen] = useState(false);
   return (
@@ -375,6 +373,19 @@ export default function Navbar() {
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
+                  {navigation.Home.map((page) => (
+                    <div
+                      key={page.name}
+                      className="d-flex justify-center align-items-center "
+                    >
+                      <Link
+                        href={page.href}
+                        className="-m-2 block p-2  font-medium text-gray-900 text-decoration-none hover:text-black"
+                      >
+                        {page.name}
+                      </Link>
+                    </div>
+                  ))}
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => (
