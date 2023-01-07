@@ -3,11 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
-import textState from "../../Data/AtomLang";
+import { getProducts, textState } from "../../Data/AtomLang";
 import SingleCard from "../SingleCard";
 
 export default function CardHome() {
-// Get Chaek i18n
+  const [, setProdactsAtom] = useRecoilState(getProducts);
+
+  // Get Chaek i18n
   const [atomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();
   const chakLangAREN = () => {
@@ -22,8 +24,10 @@ export default function CardHome() {
       url: "https://fakestoreapi.com/products",
     }).then((res) => {
       setProdacts(res.data);
+      prodacts.length >= 1 && setProdactsAtom(true);
     });
   }, []);
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

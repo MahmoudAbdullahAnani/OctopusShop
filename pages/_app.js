@@ -8,15 +8,17 @@ import { RecoilRoot } from "recoil";
 import "animate.css";
 import Head from "next/head";
 import ButtonTop from "../components/ButtonTop";
+import SpinnerLoode from "../components/SpineerLood";
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
-        <title>Octopus Shop</title>
-      </Head>
-      <RecoilRoot>
+    <Head>
+    <title>Octopus Shop</title>
+    </Head>
+    <RecoilRoot>
+    <SpinnerLoode/>
         <Navbar />
         <Component {...pageProps} />
         <ButtonTop />

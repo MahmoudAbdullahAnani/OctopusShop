@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useRecoilState } from "recoil";
 import { useTranslation } from "react-i18next";
-import textState from "../../Data/AtomLang";
+import {textState} from "../../Data/AtomLang";
 import { useEffect } from "react";
 // css modules
 export default function Galrye() {

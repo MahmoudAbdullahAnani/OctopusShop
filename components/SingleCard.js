@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
-import textState from "../Data/AtomLang";
+import {textState} from "../Data/AtomLang";
 import FormaterPrice from "../FormatNumber/numFormat";
 
 const SingleCard = ({ prodacts }) => {

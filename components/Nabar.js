@@ -10,14 +10,13 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { trans } from "../pages/_app";
 import { useRecoilState } from "recoil";
-import textState from "../Data/AtomLang";
+import {getProducts, textState} from "../Data/AtomLang";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
-
   // Function Trans
   // Use conText
   // Get RecoilState
@@ -130,8 +129,13 @@ export default function Navbar() {
     pages: [{ name: t("Company"), href: "#" }],
   };
   const [open, setOpen] = useState(false);
+  const [prodacts, ] = useRecoilState(getProducts);
   return (
-    <div className="bg-dark drop-shadow-lg sticky-top">
+    <div
+      className={`bg-dark drop-shadow-lg sticky-top z-10 ${
+        prodacts ? "d-none" : null
+      } `}
+    >
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
