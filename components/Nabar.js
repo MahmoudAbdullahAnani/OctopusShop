@@ -18,7 +18,6 @@ function classNames(...classes) {
 
 export default function Navbar() {
   // Function Trans
-  // Use conText
   // Get RecoilState
   const [atomLang, setAtomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();

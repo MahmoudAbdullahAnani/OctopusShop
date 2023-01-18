@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.7",
@@ -21,6 +22,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
+    "emailjs": "^4.0.1",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "i18next": "^22.4.6",
@@ -29,7 +31,10 @@
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.1.1",
+    "react-toastify": "^9.1.1",
     "recoil": "^0.7.6",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
