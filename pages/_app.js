@@ -11,21 +11,31 @@ import ButtonTop from "../components/ButtonTop";
 import SpinnerLoode from "../components/SpineerLood";
 import { useEffect, useState } from "react";
 
-
 function MyApp({ Component, pageProps }) {
   const [scrolly, setScrolly] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-          setScrolly(scrollY)
-        });
+      setScrolly(scrollY);
+    });
   }, []);
   return (
     <>
-    <Head>
-    <title>Octopus Shop</title>
-    </Head>
-    <RecoilRoot>
-    <SpinnerLoode/>
+      <Head>
+        <title>Octopus Shop</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="description"
+          content="Everything you want from a variety of clothes, you will find it in Octopus Shop Ha, take a look..."
+        />
+        <meta
+          name="keywords"
+          content="Octopus Shop, shopping, clothes, mens wear, Women's Clothing, international trademarks"
+        />
+        <meta name="author" content="Mahmoud Abdullah" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <RecoilRoot>
+        <SpinnerLoode />
         <Navbar />
         <Component {...pageProps} />
         {scrolly >= 600 && <ButtonTop />}
