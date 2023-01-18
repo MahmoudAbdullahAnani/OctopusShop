@@ -111,8 +111,8 @@ export default function Galrye() {
                 </div>
               </div>
               <button className="buttonGalry" onClick={() => {
-                scrollBy(0,700)
-              }}>
+                scrollBy(0, 900)
+                }}>
                 <svg
                   height="36px"
                   width="36px"

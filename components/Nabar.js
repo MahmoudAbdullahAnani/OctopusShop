@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { trans } from "../pages/_app";
 import { useRecoilState } from "recoil";
-import {getProducts, textState} from "../Data/AtomLang";
+import { getProducts, textState } from "../Data/AtomLang";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -129,7 +129,7 @@ export default function Navbar() {
     pages: [{ name: t("Company"), href: "#" }],
   };
   const [open, setOpen] = useState(false);
-  const [prodacts, ] = useRecoilState(getProducts);
+  const [prodacts] = useRecoilState(getProducts);
   return (
     <div
       className={`bg-dark drop-shadow-lg sticky-top z-10 ${
@@ -177,10 +177,13 @@ export default function Navbar() {
                 <Tab.Group as="div" className="mt-2">
                   <div className="border-b border-gray-200">
                     <Link
-                      className="text-decoration-none  buttonHome"
+                      className="text-decoration-none px-3 buttonHome"
                       href={`/`}
+                      onClick={() => {
+                        setOpen(false);
+                      }}
                     >
-                      Home
+                      {t("Home")}
                     </Link>
                     <Tab.List className="-mb-px flex space-x-8 px-4">
                       {navigation.categories.map((category) => (
@@ -375,213 +378,225 @@ export default function Navbar() {
               */}
 
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                <div className="flex h-full space-x-8">
-                  {navigation.Home.map((page) => (
-                    <div
-                      key={page.name}
-                      className="d-flex justify-center align-items-center "
-                    >
-                      <Link
-                        href={page.href}
-                        className="-m-2 block p-2  font-medium text-gray-900 text-decoration-none hover:text-black"
+              <div
+                className={`d-flex w-100 ${
+                  atomLang ? "flex-row-reverse" : ""
+                } hhh`}
+              >
+                <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+                  <div
+                    className={`flex h-full space-x-8 ${
+                      atomLang ? "flex-row-reverse" : ""
+                    }`}
+                  >
+                    {navigation.Home.map((page) => (
+                      <div
+                        key={page.name}
+                        className="d-flex justify-center px-3 align-items-center "
                       >
-                        {page.name}
-                      </Link>
-                    </div>
-                  ))}
-                  {navigation.categories.map((category) => (
-                    <Popover key={category.name} className="flex">
-                      {({ open }) => (
-                        <>
-                          <div className="relative flex">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? "border-indigo-600 text-indigo-600"
-                                  : "border-transparent text-gray-700 hover:text-gray-800",
-                                "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
-                              )}
+                        <Link
+                          href={page.href}
+                          className="-m-2 block p-2  font-medium text-gray-900 text-decoration-none hover:text-black"
+                        >
+                          {page.name}
+                        </Link>
+                      </div>
+                    ))}
+                    {navigation.categories.map((category) => (
+                      <Popover key={category.name} className="flex">
+                        {({ open }) => (
+                          <>
+                            <div className="relative flex">
+                              <Popover.Button
+                                className={classNames(
+                                  open
+                                    ? "border-indigo-600 text-indigo-600"
+                                    : "border-transparent text-gray-700 hover:text-gray-800",
+                                  "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                )}
+                              >
+                                {category.name}
+                              </Popover.Button>
+                            </div>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-200"
+                              enterFrom="opacity-0"
+                              enterTo="opacity-100"
+                              leave="transition ease-in duration-150"
+                              leaveFrom="opacity-100"
+                              leaveTo="opacity-0"
                             >
-                              {category.name}
-                            </Popover.Button>
-                          </div>
+                              <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                                {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
+                                <div
+                                  className="absolute inset-0 top-1/2 bg-white shadow"
+                                  aria-hidden="true"
+                                />
 
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                          >
-                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div
-                                className="absolute inset-0 top-1/2 bg-white shadow"
-                                aria-hidden="true"
-                              />
-
-                              <div className="relative bg-white">
-                                <div className="mx-auto max-w-7xl px-8">
-                                  <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                    <div className="col-start-2 grid grid-cols-2 gap-x-8">
-                                      {category.featured.map((item) => (
-                                        <div
-                                          key={item.name}
-                                          className="group relative text-base sm:text-sm"
-                                        >
-                                          <Link
-                                            href={item.href}
-                                            className="mt-6 block font-medium text-gray-900"
+                                <div className="relative bg-white">
+                                  <div className="mx-auto max-w-7xl px-8">
+                                    <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
+                                      <div className="col-start-2 grid grid-cols-2 gap-x-8">
+                                        {category.featured.map((item) => (
+                                          <div
+                                            key={item.name}
+                                            className="group relative text-base sm:text-sm"
                                           >
-                                            <span
-                                              className="absolute inset-0 z-10"
+                                            <Link
+                                              href={item.href}
+                                              className="mt-6 block font-medium text-gray-900"
+                                            >
+                                              <span
+                                                className="absolute inset-0 z-10"
+                                                aria-hidden="true"
+                                              />
+                                              {item.name}
+                                            </Link>
+                                            <p
                                               aria-hidden="true"
-                                            />
-                                            {item.name}
-                                          </Link>
-                                          <p
-                                            aria-hidden="true"
-                                            className="mt-1"
-                                          >
-                                            {t("Shop now")}
-                                          </p>
-                                        </div>
-                                      ))}
-                                    </div>
-                                    <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
-                                      {category.sections.map((section) => (
-                                        <div key={section.name}>
-                                          <p
-                                            id={`${section.name}-heading`}
-                                            className={`font-medium text-gray-900 ${
-                                              atomLang ? "text-center" : ""
-                                            }`}
-                                          >
-                                            {section.name}
-                                          </p>
-                                          <ul
-                                            role="list"
-                                            aria-labelledby={`${section.name}-heading`}
-                                            className="mt-6 space-y-6 sm:mt-4 sm:space-y-4 "
-                                          >
-                                            {section.items.map((item) => (
-                                              <li
-                                                key={item.name}
-                                                className="flex justify-content"
-                                              >
-                                                <Link
-                                                  href={item.href}
-                                                  className="hover:text-gray-800"
+                                              className="mt-1"
+                                            >
+                                              {t("Shop now")}
+                                            </p>
+                                          </div>
+                                        ))}
+                                      </div>
+                                      <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
+                                        {category.sections.map((section) => (
+                                          <div key={section.name}>
+                                            <p
+                                              id={`${section.name}-heading`}
+                                              className={`font-medium text-gray-900 ${
+                                                atomLang ? "text-center" : ""
+                                              }`}
+                                            >
+                                              {section.name}
+                                            </p>
+                                            <ul
+                                              role="list"
+                                              aria-labelledby={`${section.name}-heading`}
+                                              className="mt-6 space-y-6 sm:mt-4 sm:space-y-4 "
+                                            >
+                                              {section.items.map((item) => (
+                                                <li
+                                                  key={item.name}
+                                                  className="flex justify-content"
                                                 >
-                                                  {item.name}
-                                                </Link>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      ))}
+                                                  <Link
+                                                    href={item.href}
+                                                    className="hover:text-gray-800"
+                                                  >
+                                                    {item.name}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          </div>
+                                        ))}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                  ))}
+                              </Popover.Panel>
+                            </Transition>
+                          </>
+                        )}
+                      </Popover>
+                    ))}
 
-                  {navigation.pages.map((page) => (
-                    <Link
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center text-decoration-none text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {page.name}
-                    </Link>
-                  ))}
-                  <div className="d-flex align-items-center justify-self-center">
-                    <div className="dropdown togelStores">
-                      <button
-                        className=" dropdown-toggle"
-                        type="button"
-                        // id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
+                    {navigation.pages.map((page) => (
+                      <Link
+                        key={page.name}
+                        href={page.href}
+                        className="flex items-center text-decoration-none text-sm font-medium text-gray-700 hover:text-gray-800"
                       >
-                        {t("Stores")}
-                      </button>
-                      <ul
-                        className="dropdown-menu text-center"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <Link className="dropdown-item" href="#">
-                            {t("Clothes")}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="#">
-                            {t("Shoes")}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="#">
-                            {t("Hours")}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="#">
-                            {t("Computers")}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="#">
-                            {t("Electrical equipment")}
-                          </Link>
-                        </li>
-                      </ul>
+                        {page.name}
+                      </Link>
+                    ))}
+                    <div className="d-flex align-items-center justify-self-center">
+                      <div className="dropdown togelStores">
+                        <button
+                          className=" dropdown-toggle"
+                          type="button"
+                          // id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          {t("Stores")}
+                        </button>
+                        <ul
+                          className="dropdown-menu text-center"
+                          aria-labelledby="dropdownMenuButton1"
+                        >
+                          <li>
+                            <Link className="dropdown-item" href="#">
+                              {t("Clothes")}
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" href="#">
+                              {t("Shoes")}
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" href="#">
+                              {t("Hours")}
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" href="#">
+                              {t("Computers")}
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" href="#">
+                              {t("Electrical equipment")}
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Popover.Group>
+                </Popover.Group>
+                <div
+                  className={`${
+                    atomLang ? "me-auto" : "ms-auto"
+                  } flex items-center`}
+                >
+                  <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                    <Link
+                      href="#"
+                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      {t("Sign in")}
+                    </Link>
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                    <Link
+                      href="#"
+                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      {t("Create account")}
+                    </Link>
+                  </div>
 
-              <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    {t("Sign in")}
-                  </Link>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <Link
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    {t("Create account")}
-                  </Link>
-                </div>
+                  <div className="d-flex lg:ml-8 lg:flex min-h-min items-center flex-nowrap">
+                    <span className="text-sky-400/100 min-h-min">EN</span>
+                    <Switch
+                      checked={atomLang}
+                      onClick={() => {
+                        atomLang ? setAtomLang(false) : setAtomLang(true);
+                        atomLang
+                          ? i18n.changeLanguage("en")
+                          : i18n.changeLanguage("ar");
+                      }}
+                      className="chek"
+                    />
+                    <span className="text-sky-400/100 min-h-min">AR</span>
+                  </div>
 
-                <div className="d-flex lg:ml-8 lg:flex min-h-min items-center flex-nowrap">
-                  <span className="text-sky-400/100 min-h-min">EN</span>
-                  <Switch
-                    checked={atomLang}
-                    onClick={() => {
-                      atomLang ? setAtomLang(false) : setAtomLang(true);
-                      atomLang
-                        ? i18n.changeLanguage("en")
-                        : i18n.changeLanguage("ar");
-                    }}
-                    className="chek"
-                  />
-                  <span className="text-sky-400/100 min-h-min">AR</span>
-                </div>
-
-                {/* Search 
+                  {/* Search 
                 <div className="flex lg:ml-6">
                   <Link href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
@@ -593,18 +608,19 @@ export default function Navbar() {
                 </div>
                 */}
 
-                {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
-                  <Link href="#" className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      0
-                    </span>
-                    <span className="sr-only">items in cart, view bag</span>
-                  </Link>
+                  {/* Cart */}
+                  <div className="ml-4 flow-root lg:ml-6">
+                    <Link href="#" className="group -m-2 flex items-center p-2">
+                      <ShoppingBagIcon
+                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                        0
+                      </span>
+                      <span className="sr-only">items in cart, view bag</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

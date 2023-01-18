@@ -1,10 +1,11 @@
 import { Button } from "@mui/material";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const ButtonTop = () => {
-  return (
+
+   return(
     <Button
-      className="position-fixed bottom-0 end-0 bg-slate-700 m-3"
+      className="position-fixed bottom-0 end-0  m-3"
       variant="outlined"
       size="small"
       onClick={() => {
@@ -14,9 +15,6 @@ const ButtonTop = () => {
       <KeyboardDoubleArrowUpIcon />
     </Button>
   );
-  
+};
 
-
-}
- 
 export default ButtonTop;

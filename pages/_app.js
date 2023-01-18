@@ -9,9 +9,16 @@ import "animate.css";
 import Head from "next/head";
 import ButtonTop from "../components/ButtonTop";
 import SpinnerLoode from "../components/SpineerLood";
+import { useEffect, useState } from "react";
 
 
 function MyApp({ Component, pageProps }) {
+  const [scrolly, setScrolly] = useState(0);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+          setScrolly(scrollY)
+        });
+  }, []);
   return (
     <>
     <Head>
@@ -21,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <SpinnerLoode/>
         <Navbar />
         <Component {...pageProps} />
-        <ButtonTop />
+        {scrolly >= 600 && <ButtonTop />}
         <Footer />
       </RecoilRoot>
     </>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
-import {textState} from "../Data/AtomLang";
+import { textState } from "../Data/AtomLang";
 import FormaterPrice from "../FormatNumber/numFormat";
 
 const SingleCard = ({ prodacts }) => {
@@ -12,22 +12,22 @@ const SingleCard = ({ prodacts }) => {
   const chakLangAREN = () => {
     atomLang ? i18n.changeLanguage("en") : i18n.changeLanguage("ar");
   };
-    useEffect(() => {
-      chakLangAREN;
-    }, []);
+  useEffect(() => {
+    chakLangAREN;
+  }, []);
   return (
     <div className="mt-6 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {prodacts.map(
         ({ id, title, price, description, category, image, rating }) => (
           <div key={id} className="group relative ">
             <div className=" min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-              <img
-                width={`100`}
-                height={`100`}
-                src={image}
-                alt={category}
-                className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-              />
+                <img
+                  width={`100`}
+                  height={`100`}
+                  src={image}
+                  alt={category}
+                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                />
             </div>
             <div className="mt-4 flex justify-between">
               <div>
@@ -51,5 +51,5 @@ const SingleCard = ({ prodacts }) => {
     </div>
   );
 };
- 
+
 export default SingleCard;
