@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 import { textState } from "../Data/AtomLang";
 
 const Footer = () => {
-    const [atomLang, setAtomLang] = useRecoilState(textState);
-    const [t, i18n] = useTranslation();
+    const [atomLang, ] = useRecoilState(textState);
+  const [t, ] = useTranslation();
     const form = useRef();
   const [message, setMessage] = useState("")
   const sendEmail = (e) => {
@@ -32,7 +32,9 @@ const Footer = () => {
             console.log(error.text);
           }
       );
-      toast.success("Successful submission🥳", {
+      // Emput input 
+      setMessage("")
+      toast.success(t("Successful submission🥳"), {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -43,7 +45,7 @@ const Footer = () => {
         theme: "light",
       });
     } else {
-      toast.warn("Submission failed, write a complete message🥺", {
+      toast.warn(t("Submission failed, write a complete message🥺"), {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -72,13 +74,11 @@ const Footer = () => {
       {/* Same as */}
       <ToastContainer />
       <div className="messageGmail pt-3 flex text-white">
-        <div className={`mx-auto ${atomLang ? "text-end" : ""}`}>
+        <div className={`mx-auto ${atomLang ? "text-end" : ""} max-w-3xl p-3`}>
           <h1>{t("Send Message")}</h1>
           <p>
             {t("You can send it whatever you feel or any note")}
-            <br />
             {t("you want to leave for us to develop, or if you want")}
-            <br />
             {t("something specific, we can respond within 2 to 4 hours.")}
           </p>
           <form ref={form} onSubmit={sendEmail}>
@@ -88,12 +88,13 @@ const Footer = () => {
               onChange={(e) => {
                 setMessage(e.target.value);
               }}
+              value={message}
               className={`py-1 px-2 rounded-lg  text-black focus:border-none outline-none max-h-36 w-100 ${
                 atomLang ? "text-end" : ""
               }`}
               placeholder={t("Write your message...")}
             />
-            <br />
+             
             <div className="flex align-items-center">
               <Button
                 type="submit"
