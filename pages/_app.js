@@ -33,6 +33,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="author" content="Mahmoud Abdullah" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../public/44.png" type="image/png type" />
       </Head>
       <RecoilRoot>
         <SpinnerLoode />

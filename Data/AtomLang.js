@@ -8,4 +8,8 @@ const getProducts = atom({
   key: "getProducts", // unique ID (with respect to other atoms/selectors)
   default: false, // default value (aka initial value)
 });
-export { textState, getProducts }; 
+const getDisc = atom({
+  key: "getDisc", // unique ID (with respect to other atoms/selectors)
+  default: false, // default value (aka initial value)
+});
+export { textState, getProducts, getDisc }; 

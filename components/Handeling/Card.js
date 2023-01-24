@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { getProducts, textState } from "../../Data/AtomLang";
 import SingleCard from "../SingleCard";
+import styles from "../../styles/footer.module.scss"
+
 
 export default function CardHome() {
   const [prodactGet, setProdactsAtom] = useRecoilState(getProducts);
@@ -33,7 +35,7 @@ export default function CardHome() {
 
   }, []);
           return (
-            <div className="bg-white">
+            <div className={`bg-white`}>
               <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <h2
                   id="#boost"
