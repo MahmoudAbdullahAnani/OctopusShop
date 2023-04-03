@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import LodingDataHome from "../components/Handeling/LodingDataHome";
 import ProdctdefaultHome from "../components/Home";
 const Home = () => {
-  const [timeLoding, setTimeLoding] = useState(true);
+  const [timeLoding, setTimeLoding] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setTimeLoding(false);

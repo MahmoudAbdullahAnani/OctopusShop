@@ -11,6 +11,14 @@ import ButtonTop from "../components/ButtonTop";
 import SpinnerLoode from "../components/SpineerLood";
 import { useEffect, useState } from "react";
 
+// React-query
+import { QueryClient, QueryClientProvider } from "react-query";
+// import { ReactQueryDevtools } from "react-query/devtools";
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+const client = new QueryClient();
+
+
 function MyApp({ Component, pageProps }) {
   const [scrolly, setScrolly] = useState(0);
   useEffect(() => {
@@ -35,13 +43,16 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="../public/44.png" type="image/png type" />
       </Head>
-      <RecoilRoot>
-        <SpinnerLoode />
-        <Navbar />
-        <Component {...pageProps} />
-        {scrolly >= 600 && <ButtonTop />}
-        <Footer />
-      </RecoilRoot>
+      <QueryClientProvider client={client}>
+        <RecoilRoot>
+          <SpinnerLoode />
+          <Navbar />
+          <Component {...pageProps} />
+          {scrolly >= 600 && <ButtonTop />}
+          <Footer />
+        </RecoilRoot>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   );
 }
