@@ -72,6 +72,7 @@ const [chackSignIn,setChackSignIn] = useState('')
           ({ id, title, price, description, category, image, rating }) => (
             <div key={id} className="group relative ">
               <div className=" min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                {/*eslint-disable-next-line @next/next/no-img-element*/}
                 <img
                   width={`100`}
                   height={`100`}

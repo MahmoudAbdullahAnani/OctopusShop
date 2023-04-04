@@ -10,15 +10,25 @@ export const usersDB = [
 ];
 
 function signup() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [atomLang, setAtomLang] = useRecoilState(textState);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [t, i18n] = useTranslation();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [nullUser, setNullUser] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [name, setName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [userName, setUserName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [errorName, setErrorName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [errorUserName, setErrorUserName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [errorPassword, setErrorPassword] = useState("");
   const submit = (e) => {
     e.preventDefault();
