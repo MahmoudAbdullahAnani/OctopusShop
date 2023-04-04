@@ -10,7 +10,6 @@ import Head from "next/head";
 import ButtonTop from "../components/ButtonTop";
 import SpinnerLoode from "../components/SpineerLood";
 import { useEffect, useState } from "react";
-
 // React-query
 import { QueryClient, QueryClientProvider } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
@@ -44,7 +43,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="../public/44.png" type="image/png type" />
       </Head>
       <QueryClientProvider client={client}>
-        <RecoilRoot>
+      <RecoilRoot>
+      
           <SpinnerLoode />
           <Navbar />
           <Component {...pageProps} />
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
           <Footer />
         </RecoilRoot>
         <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+        </QueryClientProvider>
     </>
   );
 }

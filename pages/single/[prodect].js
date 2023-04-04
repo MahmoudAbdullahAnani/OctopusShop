@@ -8,6 +8,7 @@ const singleProdect = () => {
   const routId = router.query.prodect;
   return (
     <>
+      
       <RecipeReviewCard routId={routId} />
     </>
   );

@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -10,13 +10,41 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { trans } from "../pages/_app";
 import { useRecoilState } from "recoil";
-import { getProducts, textState } from "../Data/AtomLang";
+import { getProducts, textState, userSign } from "../Data/AtomLang";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useRouter } from "next/router";
+
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Swal from "sweetalert2";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+  // handleShow fn
+  const handleShow = () => {
+Swal.fire({
+  title: t("Are you sure?"),
+  text: t("You won't be able to revert this!"),
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: t("Yes, Log Out!"),
+  cancelButtonText: t("Cancel"),
+}).then((result) => {
+  if (result.isConfirmed) {
+    localStorage.removeItem("name");
+    setItemSignIn("");
+  }
+});
+  };
+  const router = useRouter();
+
+  const [userSignIn, setUserSign] = useRecoilState(userSign);
+  const [itemSignIn, setItemSignIn] = useState();
   // Function Trans
   // Get RecoilState
   const [atomLang, setAtomLang] = useRecoilState(textState);
@@ -129,6 +157,10 @@ export default function Navbar() {
   };
   const [open, setOpen] = useState(false);
   const [prodacts] = useRecoilState(getProducts);
+  useEffect(() => {
+    const item = localStorage.getItem(`name`);
+    setItemSignIn(item);
+  }, [router.asPath, itemSignIn]);
   return (
     <div
       className={`bg-dark drop-shadow-lg sticky-top z-10 ${
@@ -325,20 +357,36 @@ export default function Navbar() {
 
                 <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                   <div className="flow-root">
-                    <Link
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      {t("Sign in")}
-                    </Link>
+                    {itemSignIn ? (
+                      <div className="flex">
+                        <AccountCircleIcon className={`text-blue-400`} />
+                        <h6 className={`m-0 pb-1 ps-1`}>{itemSignIn}</h6>
+                      </div>
+                    ) : (
+                      <Link
+                        href="/signin"
+                        className="-m-2 block p-2 font-medium text-gray-900"
+                      >
+                        {t("Sign in")}
+                      </Link>
+                    )}
                   </div>
                   <div className="flow-root">
-                    <Link
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Create account
-                    </Link>
+                    {itemSignIn ? (
+                      <button
+                        onClick={handleShow}
+                        className="btn bg-danger  text-sm font-medium hover:text-gray-800 text-white "
+                      >
+                        {t("Log out")}
+                      </button>
+                    ) : (
+                      <Link
+                        href="/signup"
+                        className="-m-2 block p-2 font-medium text-gray-900"
+                      >
+                        Create account
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -565,19 +613,35 @@ export default function Navbar() {
                   } flex items-center`}
                 >
                   <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                    <Link
-                      href="#"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {t("Sign in")}
-                    </Link>
+                    {itemSignIn ? (
+                      <>
+                        <AccountCircleIcon className={`text-blue-400`} />
+                        <h6 className={`m-0 pb-1 ps-1`}>{itemSignIn}</h6>
+                      </>
+                    ) : (
+                      <Link
+                        href="/signin"
+                        className="-m-2 block p-2 font-medium text-gray-900"
+                      >
+                        {t("Sign in")}
+                      </Link>
+                    )}
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                    <Link
-                      href="#"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {t("Create account")}
-                    </Link>
+                    {itemSignIn ? (
+                      <button
+                        onClick={handleShow}
+                        className="btn bg-danger  text-sm font-medium hover:text-gray-800 text-white "
+                      >
+                        {t("Log out")}
+                      </button>
+                    ) : (
+                      <Link
+                        href="/signup"
+                        className="-m-2 block p-2 font-medium text-gray-900"
+                      >
+                        Create account
+                      </Link>
+                    )}
                   </div>
 
                   <div className="d-flex lg:ml-8 lg:flex min-h-min items-center flex-nowrap">

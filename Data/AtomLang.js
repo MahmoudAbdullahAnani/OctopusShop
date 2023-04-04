@@ -12,4 +12,8 @@ const getDisc = atom({
   key: "getDisc", // unique ID (with respect to other atoms/selectors)
   default: false, // default value (aka initial value)
 });
-export { textState, getProducts, getDisc }; 
+const userSign = atom({
+  key: "userSign", // unique ID (with respect to other atoms/selectors)
+  default: false, // default value (aka initial value)
+});
+export { textState, getProducts, getDisc, userSign }; 

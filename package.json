@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db": "json-server --watch db.json --port 9000"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
@@ -26,17 +27,20 @@
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "i18next": "^22.4.6",
+    "json-server": "^0.17.3",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.1.1",
     "react-query": "^3.39.3",
+    "react-router-dom": "^6.10.0",
     "react-toastify": "^9.1.1",
     "recoil": "^0.7.6",
     "sass": "^1.57.1",
     "scss": "^0.2.4",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "sweetalert2": "^11.7.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
