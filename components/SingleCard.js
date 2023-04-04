@@ -6,8 +6,7 @@ import { textState } from "../Data/AtomLang";
 import FormaterPrice from "../FormatNumber/numFormat";
 import styles from "../styles/cardes.module.scss";
 
-const SingleCard = ({ prodacts }) => {
-  // const [isProdacts, setIsProdacrs] = useState(0);
+const SingleCard = ({ prodacts, categories }) => {
   // Get i18n
   const [atomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();
@@ -15,18 +14,61 @@ const SingleCard = ({ prodacts }) => {
   const chakLangAREN = () => {
     atomLang ? i18n.changeLanguage("en") : i18n.changeLanguage("ar");
   };
-
+const [chackSignIn,setChackSignIn] = useState('')
   useEffect(() => {
     chakLangAREN;
+    const chackLogin = localStorage.getItem("signin");
+    setChackSignIn(chackLogin);
   }, []);
+  const categoriesStatic = {
+    name1: t("electronics"),
+    name2: t("jewelery"),
+    name3: t("men's clothing"),
+    name4: t("women's clothing"),
+    name5: t("All"),
+  };
+
+  const [typeProdects, setTypeProdects] = useState('All')
+  const filterData = prodacts.filter(
+    (p) => p.category === typeProdects
+  );
 
   return (
     <>
-      <div>
-      dsv
+      <div className={`flex justify-around row ${styles.categories}`}>
+        <button
+          onClick={() => setTypeProdects("electronics")}
+          className="col-lg-2 col-mg-3 btn fs-5 border"
+        >
+          {categoriesStatic.name1}
+        </button>
+        <button
+          onClick={() => setTypeProdects("jewelery")}
+          className="col-lg-2 col-mg-3 btn fs-5 border"
+        >
+          {categoriesStatic.name2}
+        </button>
+        <button
+          onClick={() => setTypeProdects("men's clothing")}
+          className="col-lg-2 col-mg-3 btn fs-5 border"
+        >
+          {categoriesStatic.name3}
+        </button>
+        <button
+          onClick={() => setTypeProdects("women's clothing")}
+          className="col-lg-2 col-mg-3 btn fs-5 border"
+        >
+          {categoriesStatic.name4}
+        </button>
+        <button
+          onClick={() => setTypeProdects("All")}
+          className="col-lg-2 col-mg-3 btn fs-5 border"
+        >
+          {categoriesStatic.name5}
+        </button>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {prodacts.map(
+        {(typeProdects === "All" ? prodacts : filterData).map(
           ({ id, title, price, description, category, image, rating }) => (
             <div key={id} className="group relative ">
               <div className=" min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
@@ -82,6 +124,15 @@ const SingleCard = ({ prodacts }) => {
                   </p>
                 )}
               </div>
+              {chackSignIn === "true" && (
+                <div className="mt-5">
+                  <p
+                    className={`btn text-center w-100  bg-primary text-white absolute bottom-0 `}
+                  >
+                    {t("Add to cart")}
+                  </p>
+                </div>
+              )}
             </div>
           )
         )}

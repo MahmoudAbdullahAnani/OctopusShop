@@ -11,3 +11,17 @@
 .dir{
     direction: rtl;
 }
+
+$bfCategories1: blur(10px);
+$bfCategories2: #3b82f6;
+.categories{
+    button{
+        color: white;
+        background: $bfCategories1;
+        background: $bfCategories2;
+        border: dashed black 1px;
+    }
+    button:hover{
+        border: dashed black 1px !important;
+    }
+}
