@@ -13,10 +13,11 @@ import { useEffect, useState } from "react";
 // React-query
 import { QueryClient, QueryClientProvider } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { ReactQueryDevtools } from "react-query/devtools";
+import { Provider } from "react-redux";
+import { store } from "../rdx/Store";
 
 const client = new QueryClient();
-
 
 function MyApp({ Component, pageProps }) {
   const [scrolly, setScrolly] = useState(0);
@@ -43,16 +44,17 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="./../public/logo.ico" type="image/png type" />
       </Head>
       <QueryClientProvider client={client}>
-      <RecoilRoot>
-      
-          <SpinnerLoode />
-          <Navbar />
-          <Component {...pageProps} />
-          {scrolly >= 600 && <ButtonTop />}
-          <Footer />
-        </RecoilRoot>
-        <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+        <Provider store={store}>
+          <RecoilRoot>
+            <SpinnerLoode />
+            <Navbar />
+            <Component {...pageProps} />
+            {scrolly >= 600 && <ButtonTop />}
+            <Footer />
+          </RecoilRoot>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </Provider>
+      </QueryClientProvider>
     </>
   );
 }

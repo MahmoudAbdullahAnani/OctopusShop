@@ -17,12 +17,16 @@ import { useRouter } from "next/router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { clareProduct } from "../rdx/Actions/prodectsCard";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+    const prodectsCard = useSelector((store) => store.ProdactsSlice);
+  const dispatch = useDispatch()
   // handleShow fn
   const handleShow = () => {
 Swal.fire({
@@ -38,6 +42,7 @@ Swal.fire({
   if (result.isConfirmed) {
     localStorage.removeItem("name");
     setItemSignIn("");
+    dispatch(clareProduct());
   }
 });
   };
@@ -683,7 +688,7 @@ Swal.fire({
                           aria-hidden="true"
                         />
                         <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                          0
+                          {prodectsCard.length}
                         </span>
                         <span className="sr-only">items in cart, view bag</span>
                       </Link>

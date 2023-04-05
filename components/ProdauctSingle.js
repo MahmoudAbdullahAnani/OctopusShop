@@ -6,6 +6,9 @@ import FormaterPrice from "../FormatNumber/numFormat";
 import { useTranslation } from "react-i18next";
 import { textState } from "../Data/AtomLang";
 import { useRecoilState } from "recoil";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../rdx/Actions/prodectsCard";
+import { toast } from "react-toastify";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -14,20 +17,56 @@ function classNames(...classes) {
 }
 
 export default function ProdauctSingle({ routId }) {
-    const [atomLang, setAtomLang] = useRecoilState(textState);
-    const [t, i18n] = useTranslation();
-  // Get Product
   const [product, setProduct] = useState([]);
+  const [signIn, setSignIn] = useState("");
+  // rdx
+  const dispatch = useDispatch();
+  const prodectsCard = useSelector((store) => store.ProdactsSlice);
+  const addProdectToCard = () => {
+
+    if (signIn) {
+      dispatch(addProduct(product));
+      toast.success(t("Added successfully"), {
+        position: atomLang ? "top-left" : "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      
+    } else {
+      toast.warn(t("You must login first!"), {
+        position: atomLang ? "top-left" : "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
+  const [atomLang, setAtomLang] = useRecoilState(textState);
+  const [t, i18n] = useTranslation();
+  // Get Product
 
   useEffect(() => {
+        const item = localStorage.getItem("name");
+        setSignIn(item);
     // GET request for remote image in node.js
     axios({
       method: "get",
       url: `https://fakestoreapi.com/products/${routId}`,
     }).then((res) => {
-      setProduct(res.data)
+      setProduct(res.data);
     });
   }, []);
+  console.log(prodectsCard);
   return (
     <div className="bg-white">
       <div className="pt-6">
@@ -151,6 +190,7 @@ export default function ProdauctSingle({ routId }) {
               </div>
 
               <button
+                onClick={addProdectToCard}
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 {t("Add to bag")}
