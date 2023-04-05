@@ -13,7 +13,7 @@
 }
 
 $bfCategories1: blur(10px);
-$bfCategories2: #3b82f6;
+$bfCategories2: url("./../public/footer-bg.svg");
 .categories{
     button{
         color: white;
@@ -25,3 +25,4 @@ $bfCategories2: #3b82f6;
         border: dashed black 1px !important;
     }
 }
+// vorder anmation input

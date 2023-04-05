@@ -3,7 +3,9 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import axios from "axios";
 import FormaterPrice from "../FormatNumber/numFormat";
-
+import { useTranslation } from "react-i18next";
+import { textState } from "../Data/AtomLang";
+import { useRecoilState } from "recoil";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -12,6 +14,8 @@ function classNames(...classes) {
 }
 
 export default function ProdauctSingle({ routId }) {
+    const [atomLang, setAtomLang] = useRecoilState(textState);
+    const [t, i18n] = useTranslation();
   // Get Product
   const [product, setProduct] = useState([]);
 
@@ -45,42 +49,50 @@ export default function ProdauctSingle({ routId }) {
         {/* Image gallery */}
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
+            {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img
               src={product.image}
-              alt={product.title}
+              alt={`${t(product.title)}`}
               className="h-full w-full object-cover object-center"
             />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
             <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+              {/*eslint-disable-next-line @next/next/no-img-element*/}
               <img
                 src={product.image}
-                alt={product.title}
+                alt={`${t(product.title)}`}
                 className="h-full w-full object-cover object-center"
               />
             </div>
             <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+              {/*eslint-disable-next-line @next/next/no-img-element*/}
               <img
                 src={product.image}
-                alt={product.title}
+                alt={`${t(product.title)}`}
                 className="h-full w-full object-cover object-center"
               />
             </div>
           </div>
           <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
+            {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img
               src={product.image}
-              alt={product.title}
+              alt={`${t(product.title)}`}
               className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
 
-        {/* Product info */}
+        {/* Product info EN */}
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              {product.title}
+            <h1
+              className={`${
+                atomLang && "text-end"
+              } text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl`}
+            >
+              {`${t(product.title)}`}
             </h1>
           </div>
 
@@ -119,7 +131,7 @@ export default function ProdauctSingle({ routId }) {
               </div>
             </div>
 
-            <form className="mt-10">
+            <div className="mt-10">
               {/* Colors */}
               <div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
@@ -133,18 +145,17 @@ export default function ProdauctSingle({ routId }) {
                     href="#"
                     className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                   >
-                    Size guide
+                    {t("Size guide")}
                   </a>
                 </div>
               </div>
 
               <button
-                type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                Add to bag
+                {t("Add to bag")}
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
@@ -153,7 +164,13 @@ export default function ProdauctSingle({ routId }) {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
+                <p
+                  className={`${
+                    atomLang && "text-end"
+                  } text-base text-gray-900`}
+                >
+                  {t(product.description)}
+                </p>
               </div>
             </div>
 

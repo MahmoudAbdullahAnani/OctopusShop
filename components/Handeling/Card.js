@@ -9,7 +9,7 @@ import SingleCard from "../SingleCard";
 import styles from "../../styles/footer.module.scss"
 import { useQuery } from "react-query";
 import LodingDataHome from "./LodingDataHome";
-
+export var dataPase= []
 
 export default function CardHome() {
   // const [prodactGet, setProdactsAtom] = useRecoilState(getProducts);
@@ -21,12 +21,14 @@ export default function CardHome() {
     atomLang ? i18n.changeLanguage("en") : i18n.changeLanguage("ar");
   };
   // https://fakestoreapi.com/products
+  // http://localhost:9000/products
   const fetchData = () => {
     return axios.get("https://fakestoreapi.com/products").then((res) => {
       return res.data;
     });
   };
   // https://fakestoreapi.com/products/categories
+  // http://localhost:9000/categories
   const fetchCategories = () => {
     return axios
       .get("https://fakestoreapi.com/products/categories")
@@ -43,6 +45,8 @@ export default function CardHome() {
   );
   if (isError) {
     console.log(error);
+  } else {
+    dataPase = data;
   }
   useEffect(() => {
     chakLangAREN;
@@ -53,7 +57,7 @@ export default function CardHome() {
   }
   return (
     <div className={`bg-white`}>
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl py-1 px-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2
           id="#boost"
           className={`text-2xl font-bold tracking-tight text-gray-900 ${

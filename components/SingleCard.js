@@ -14,7 +14,7 @@ const SingleCard = ({ prodacts, categories }) => {
   const chakLangAREN = () => {
     atomLang ? i18n.changeLanguage("en") : i18n.changeLanguage("ar");
   };
-const [chackSignIn,setChackSignIn] = useState('')
+  const [chackSignIn, setChackSignIn] = useState("");
   useEffect(() => {
     chakLangAREN;
     const chackLogin = localStorage.getItem("signin");
@@ -28,17 +28,31 @@ const [chackSignIn,setChackSignIn] = useState('')
     name5: t("All"),
   };
 
-  const [typeProdects, setTypeProdects] = useState('All')
-  const filterData = prodacts.filter(
-    (p) => p.category === typeProdects
-  );
+  const [typeProdects, setTypeProdects] = useState("All");
+  const filterData = prodacts.filter((p) => p.category === typeProdects);
 
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [minPrice, setMinPrice] = useState(0);
+  const [dataPrice, setDataPrice] = useState([]);
+  const [, setDataPrice2] = useState([]);
+  const filterPrice = (e) => {
+    e.preventDefault();
+    const filterDataPrice = (
+      typeProdects === "All" ? prodacts : filterData
+    ).filter((p) => p.price >= minPrice && p.price <= maxPrice);
+    setDataPrice(filterDataPrice);
+  };
+    const filterPrice2 = () => {
+      setDataPrice([]);
+    };
+  const golbalFilter = typeProdects === "All" ? prodacts : filterData;
+  const [startFilterPrice, setStartFilterPrice] = useState(false);
   return (
     <>
-      <div className={`flex justify-around row ${styles.categories}`}>
+      <div className={`flex justify-around gap-3 row ${styles.categories}`}>
         <button
           onClick={() => setTypeProdects("electronics")}
-          className="col-lg-2 col-mg-3 btn fs-5 border"
+          className="col-lg-2 col-mg-3 btn fs-5 border "
         >
           {categoriesStatic.name1}
         </button>
@@ -67,8 +81,49 @@ const [chackSignIn,setChackSignIn] = useState('')
           {categoriesStatic.name5}
         </button>
       </div>
+      <form method="POST" className={`felx flex-wrap text-center gap-2 my-2`}>
+        <input
+          className={` bg-gray-200 hover:bg-gray-50 focus:bg-gray-50 border px-2 py-1 rounded-md ${
+            atomLang && "text-end"
+          }`}
+          type="number"
+          onChange={(e) => setMaxPrice(e.target.value)}
+          placeholder={`${t("max price")}`}
+        />
+        <input
+          className={` bg-gray-200 hover:bg-gray-50 focus:bg-gray-50 border px-2 py-1 rounded-md my-2 mx-2 ${
+            atomLang && "text-end"
+          }`}
+          type="number"
+          onChange={(e) => setMinPrice(e.target.value)}
+          placeholder={`${t("min price")}`}
+        />
+        <div className={``}>
+          {" "}
+          <button
+            type="submit"
+            className={`px-3 py-2 text-white border bg-slate-500 rounded-l-lg hover:bg-slate-700`}
+            onClick={(e) => {
+              setStartFilterPrice(1);
+              filterPrice(e);
+            }}
+          >
+            {t("filter")}
+          </button>
+          <button
+            type="reset"
+            className={`px-3 py-2  text-white border bg-slate-500 rounded-r-lg hover:bg-slate-700`}
+            onClick={() => {
+              setStartFilterPrice(false);
+              filterPrice2;
+            }}
+          >
+            {t("Reset")}
+          </button>
+        </div>
+      </form>
       <div className="mt-6 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {(typeProdects === "All" ? prodacts : filterData).map(
+        {(startFilterPrice ? dataPrice : golbalFilter).map(
           ({ id, title, price, description, category, image, rating }) => (
             <div key={id} className="group relative ">
               <div className=" min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
@@ -125,7 +180,7 @@ const [chackSignIn,setChackSignIn] = useState('')
                   </p>
                 )}
               </div>
-              {chackSignIn === "true" && (
+              {
                 <div className="mt-5">
                   <p
                     className={`btn text-center w-100  bg-primary text-white absolute bottom-0 `}
@@ -133,7 +188,7 @@ const [chackSignIn,setChackSignIn] = useState('')
                     {t("Add to cart")}
                   </p>
                 </div>
-              )}
+              }
             </div>
           )
         )}
