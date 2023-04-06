@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useRecoilState } from "recoil";
-import { textState, userSign } from "../Data/AtomLang";
+import { scurityCard, textState, userSign } from "../Data/AtomLang";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { usersDB } from "./signup";
 
 function signin() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [scurCard, setScurityCard] = useRecoilState(scurityCard);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -48,6 +50,7 @@ function signin() {
           setUserSign(user);
           localStorage.setItem(`name`, user.name);
           localStorage.setItem(`signin`, true);
+          setScurityCard(true);
           router.push("/");
         } else {
           setNullUser("There is no user with this data");

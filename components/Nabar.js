@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { trans } from "../pages/_app";
 import { useRecoilState } from "recoil";
-import { getProducts, textState, userSign } from "../Data/AtomLang";
+import { getProducts, scurityCard, textState, userSign } from "../Data/AtomLang";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useRouter } from "next/router";
 
@@ -25,31 +25,41 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-    const prodectsCard = useSelector((store) => store.ProdactsSlice);
-  const dispatch = useDispatch()
+  const [scurCard, setScurityCard] = useRecoilState(scurityCard);
+  const prodectsCard = useSelector((store) => store.ProdactsSlice);
+  const dispatch = useDispatch();
+    const router = useRouter();
   // handleShow fn
   const handleShow = () => {
-Swal.fire({
-  title: t("Are you sure?"),
-  text: t("You won't be able to revert this!"),
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: t("Yes, Log Out!"),
-  cancelButtonText: t("Cancel"),
-}).then((result) => {
-  if (result.isConfirmed) {
-    localStorage.removeItem("name");
-    setItemSignIn("");
-    dispatch(clareProduct());
-  }
-});
+    Swal.fire({
+      title: t("Are you sure?"),
+      text: t("You won't be able to revert this!"),
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: t("Yes, Log Out!"),
+      cancelButtonText: t("Cancel"),
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("name");
+        localStorage.removeItem("signin");
+        setItemSignIn("");
+        dispatch(clareProduct());
+        setScurityCard(false);
+        router.push("/")
+      }
+    });
   };
-  const router = useRouter();
-
+const [allCountProduct,setAllCountProduct] = useState(0)
+//   const calcAllCart = () => {
+//      prodectsCard.map((pro) => {
+//        setAllCountProduct(pro.cartQuantity + allCountProduct);
+//     });
+//     console.log(allCountProduct);
+// }
   const [userSignIn, setUserSign] = useRecoilState(userSign);
-  const [itemSignIn, setItemSignIn] = useState('');
+  const [itemSignIn, setItemSignIn] = useState("");
   // Function Trans
   // Get RecoilState
   const [atomLang, setAtomLang] = useRecoilState(textState);
@@ -164,7 +174,7 @@ Swal.fire({
   const [prodacts] = useRecoilState(getProducts);
   useEffect(() => {
     const item = localStorage.getItem(`name`);
-    setItemSignIn(item);
+    setItemSignIn(item);  
   }, [router.asPath, itemSignIn]);
   return (
     <div

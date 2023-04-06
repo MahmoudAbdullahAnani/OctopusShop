@@ -4,11 +4,13 @@ import { RadioGroup } from "@headlessui/react";
 import axios from "axios";
 import FormaterPrice from "../FormatNumber/numFormat";
 import { useTranslation } from "react-i18next";
-import { textState } from "../Data/AtomLang";
+import { countCartRec, scurityCard, textState } from "../Data/AtomLang";
 import { useRecoilState } from "recoil";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../rdx/Actions/prodectsCard";
+import { addProduct, removeProduct } from "../rdx/Actions/prodectsCard";
 import { toast } from "react-toastify";
+import { useQuery } from "react-query";
+import { useRouter } from "next/router";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -19,16 +21,40 @@ function classNames(...classes) {
 export default function ProdauctSingle({ routId }) {
   const [product, setProduct] = useState([]);
   const [signIn, setSignIn] = useState("");
+  const [signIn2, setSignIn2] = useState("");
   // rdx
   const dispatch = useDispatch();
   const prodectsCard = useSelector((store) => store.ProdactsSlice);
-  const addProdectToCard = () => {
+  const [scurCard, setScurityCard] = useRecoilState(scurityCard);
+  const router = useRouter();
 
-    if (signIn) {
+  const [atomLang, setAtomLang] = useRecoilState(textState);
+  const [t, i18n] = useTranslation();
+  // Get Product
+  const [dablicatProdectCount, setDablicatProdectCount] = useState(0);
+  const [dablicatProdect, setDablicatProdect] = useState([]);
+
+  useEffect(() => {
+    const signin2 = localStorage.getItem("signin");
+    const item = localStorage.getItem("name");
+    setSignIn(item);
+    setSignIn2(signin2);
+    axios({
+      method: "get",
+      // https://fakestoreapi.com/products/
+      // http://localhost:9000/products
+      url: `http://localhost:9000/products/${routId}`,
+    }).then((res) => {
+      setProduct(res.data);
+    });
+  }, []);
+
+  const addProdectToCard = () => {
+    if (signIn && signIn2) {
       dispatch(addProduct(product));
       toast.success(t("Added successfully"), {
         position: atomLang ? "top-left" : "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: true,
@@ -36,7 +62,7 @@ export default function ProdauctSingle({ routId }) {
         progress: undefined,
         theme: "light",
       });
-      
+      router.push("/cart")
     } else {
       toast.warn(t("You must login first!"), {
         position: atomLang ? "top-left" : "top-right",
@@ -48,25 +74,10 @@ export default function ProdauctSingle({ routId }) {
         progress: undefined,
         theme: "light",
       });
+      router.push("/signin");
     }
   };
 
-  const [atomLang, setAtomLang] = useRecoilState(textState);
-  const [t, i18n] = useTranslation();
-  // Get Product
-
-  useEffect(() => {
-        const item = localStorage.getItem("name");
-        setSignIn(item);
-    // GET request for remote image in node.js
-    axios({
-      method: "get",
-      url: `https://fakestoreapi.com/products/${routId}`,
-    }).then((res) => {
-      setProduct(res.data);
-    });
-  }, []);
-  console.log(prodectsCard);
   return (
     <div className="bg-white">
       <div className="pt-6">
@@ -188,13 +199,21 @@ export default function ProdauctSingle({ routId }) {
                   </a>
                 </div>
               </div>
-
-              <button
-                onClick={addProdectToCard}
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                {t("Add to bag")}
-              </button>
+              {signIn2 ? (
+                <button
+                  onClick={addProdectToCard}
+                  className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  {t("Add to bag")}
+                </button>
+              ) : (
+                <button
+                  onClick={()=>router.push("/signin")}
+                  className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                >
+                  {t("Log in to place an order!")}
+                </button>
+              )}
             </div>
           </div>
 
