@@ -5,8 +5,13 @@ import { textState } from "../Data/AtomLang";
 import { useRecoilState } from "recoil";
 import { useTranslation } from "react-i18next";
 export const usersDB = [
-  { userName: "mahmoud", password: "123", name: "Mahmoud Abdullah" },
-  { userName: "ahmed", password: "123", name: "Ahmed Abdullah" },
+  {
+    userName: "mahmoud",
+    password: "123",
+    name: "Mahmoud Abdullah",
+    admin: true,
+  },
+  { userName: "ahmed", password: "123", name: "Ahmed Abdullah", admin: false },
 ];
 
 function signup() {

@@ -17,9 +17,12 @@ const SingleCard = ({ prodacts, categories }) => {
     atomLang ? i18n.changeLanguage("en") : i18n.changeLanguage("ar");
   };
   const [chackSignIn, setChackSignIn] = useState("");
+  const [chackAdmin, setChackAdmin] = useState("");
   useEffect(() => {
     chakLangAREN;
     const chackLogin = localStorage.getItem("signin");
+    const chackAdmin = localStorage.getItem("admin");
+    setChackAdmin(chackAdmin);
     setChackSignIn(chackLogin);
   }, []);
   const categoriesStatic = {
@@ -128,6 +131,7 @@ const SingleCard = ({ prodacts, categories }) => {
         {(startFilterPrice ? dataPrice : golbalFilter).map(
           ({ id, title, price, description, category, image, rating }) => (
             <div key={id} className="group relative ">
+
               <div className=" min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                 {/*eslint-disable-next-line @next/next/no-img-element*/}
                 <img
@@ -182,16 +186,15 @@ const SingleCard = ({ prodacts, categories }) => {
                   </p>
                 )}
               </div>
-              {
-                <div className="mt-5">
-                  <p
-                    onClick={() => router.push(`/single/${id}`)}
-                    className={`btn text-center w-100  bg-primary text-white absolute bottom-0 `}
-                  >
-                    {t("Add to cart")}
-                  </p>
-                </div>
-              }
+
+              <div className="mt-5">
+                <p
+                  onClick={() => router.push(`/single/${id}`)}
+                  className={`btn text-center w-100  bg-primary text-white absolute bottom-0 `}
+                >
+                  {t("Add to cart")}
+                </p>
+              </div>
             </div>
           )
         )}

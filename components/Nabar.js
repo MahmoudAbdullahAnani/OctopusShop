@@ -13,7 +13,7 @@ import { useRecoilState } from "recoil";
 import { getProducts, scurityCard, textState, userSign } from "../Data/AtomLang";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useRouter } from "next/router";
-
+import StarBorderPurple500Icon from "@mui/icons-material/StarBorderPurple500";
 // import Button from "react-bootstrap/Button";
 // import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
@@ -44,6 +44,7 @@ export default function Navbar() {
       if (result.isConfirmed) {
         localStorage.removeItem("name");
         localStorage.removeItem("signin");
+        localStorage.removeItem("admin");
         setItemSignIn("");
         dispatch(clareProduct());
         setScurityCard(false);
@@ -53,6 +54,7 @@ export default function Navbar() {
   };
 
   const [itemSignIn, setItemSignIn] = useState("");
+  const [chackAdmin, setChackAdmin] = useState("");
   // Function Trans
   // Get RecoilState
   const [atomLang, setAtomLang] = useRecoilState(textState);
@@ -167,7 +169,9 @@ export default function Navbar() {
   const [prodacts] = useRecoilState(getProducts);
   useEffect(() => {
     const item = localStorage.getItem(`name`);
-    setItemSignIn(item);  
+    const chackAdmin = localStorage.getItem(`admin`);
+    setItemSignIn(item);
+    setChackAdmin(chackAdmin);
   }, [router.asPath, itemSignIn]);
   return (
     <div
@@ -369,6 +373,9 @@ export default function Navbar() {
                       <div className="flex">
                         <AccountCircleIcon className={`text-blue-400`} />
                         <h6 className={`m-0 pb-1 ps-1`}>{itemSignIn}</h6>
+                        {chackAdmin && (
+                          <StarBorderPurple500Icon className="text-blue-300" />
+                        )}
                       </div>
                     ) : (
                       <Link
@@ -392,7 +399,7 @@ export default function Navbar() {
                         href="/signup"
                         className="-m-2 block p-2 font-medium text-gray-900"
                       >
-                        Create account
+                        {t("Create account ")}
                       </Link>
                     )}
                   </div>
@@ -625,6 +632,9 @@ export default function Navbar() {
                       <>
                         <AccountCircleIcon className={`text-blue-400`} />
                         <h6 className={`m-0 pb-1 ps-1`}>{itemSignIn}</h6>
+                        {chackAdmin && (
+                          <StarBorderPurple500Icon className="text-blue-300" />
+                        )}
                       </>
                     ) : (
                       <Link
@@ -647,7 +657,7 @@ export default function Navbar() {
                         href="/signup"
                         className="-m-2 block p-2 font-medium text-gray-900"
                       >
-                        Create account
+                        {t("Create account ")}
                       </Link>
                     )}
                   </div>

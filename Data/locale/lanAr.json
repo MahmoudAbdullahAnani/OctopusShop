@@ -148,5 +148,9 @@
     "image...":"...عنوان الصورة",
     "iamge":"صورة",
     "iamge: ":" :الصورة",
-    "Add a product":"اضافة منتج"
+    "Add a product":"اضافة منتج",
+    "There is no admin with this data":"لا يوجد مسؤول بهذه البيانات",
+    "Successful login":"تسجيل دخول ناجح",
+    "update":"تحديث",
+    "Create account ":"انشاء حساب "
 }

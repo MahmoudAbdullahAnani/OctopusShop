@@ -1,174 +1,147 @@
-import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useRecoilState } from "recoil";
-import { textState } from "../Data/AtomLang";
+import { scurityCard, textState, userSign } from "../Data/AtomLang";
+import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
+import { usersDB } from "./signup";
+import { toast } from "react-toastify";
 
-function dashpordAddProdect() {
+function admin() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [scurCard, setScurityCard] = useRecoilState(scurityCard);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [atomLang, setAtomLang] = useRecoilState(textState);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [t, i18n] = useTranslation();
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [title, setTitle] = useState("");
+  const [userSignIn, setUserSign] = useRecoilState(userSign);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [description, setDescription] = useState("");
+  const [nullUser, setNullUser] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [image, setImage] = useState("");
+  const [userName, setUserName] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [price, setPrice] = useState("");
+  const [password, setPassword] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [category, setCategory] = useState("");
+  const [errorUserName, setErrorUserName] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [rate, setRate] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [count, setCount] = useState("");
-  const dataPush = {
-    title,
-    description,
-    image,
-    price,
-    category,
-    rate,
-    count,
-  };
   const submit = (e) => {
     e.preventDefault();
-    console.log(dataPush);
+    if (!userName) {
+      setErrorUserName("There must be a User Name");
+    }
+    if (!password) {
+      return setErrorPassword("There must be a Password");
+    }
+    if (password.length <= 2) {
+      setErrorPassword(
+        "The password must be longer than five letters or numbers"
+      );
+    }
+    if (userName && password) {
+      const user = usersDB.find((user) => user.admin === true);
+      if (user.userName === userName && user.password && user.admin === true) {
+        toast.success(t("Successful login"), {
+          position: atomLang ? "top-left" : "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setUserSign(user);
+        localStorage.setItem(`name`, user.name);
+        localStorage.setItem(`signin`, true);
+        setScurityCard(true);
+        localStorage.setItem("admin", "true");
+        router.push("/dashboard");
+      } else {
+        setNullUser(t("There is no admin with this data"));
+      }
+    }
   };
-
-  // useEffect(() => {
-  //   // Send a POST request
-
-  // },[])
-
   return (
-    <form
-      action=""
-      method="post"
-      className={`my-5  flex flex-col mx-auto col-10 border p-2 rounded-lg`}
-    >
-      {/* Avatre */}
-      <label htmlFor="title" className={`${atomLang && "text-end"} p-1`}>
-        {t("title:  ")}
-      </label>
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        id="title"
-        type="text"
-        name="name"
-        placeholder={`${t("title...")}`}
-        className={`bg-gray-200 focus:bg-white p-2 border rounded-lg ${
-          atomLang && "text-end"
-        }`}
-      />
+    <>
+      <div className={`flex justify-center `}>
+        <AccountCircleIcon className={`fs-1 mt-5 mb-2 text-blue-900 `} />
+      </div>
+      <form
+        action=""
+        method="post"
+        className={`mb-5  flex flex-col mx-auto col-7 border p-2 rounded-lg`}
+      >
+        {nullUser && (
+          <h6
+            className={`bg-red-400 text-white text-center mt-2 py-1 rounded-md`}
+          >
+            {t(nullUser)}
+          </h6>
+        )}
+        {/* Avatre */}
+        <label htmlFor="userName" className={`${atomLang && "text-end"} p-1`}>
+          {t("User Name:")}
+        </label>
+        <input
+          id="userName"
+          type="text"
+          name="name"
+          placeholder={`${t("User Name...")}`}
+          className={`bg-gray-200 focus:bg-white p-2 border rounded-lg ${
+            atomLang && "text-end"
+          }`}
+          onChange={(e) => {
+            setUserName(e.target.value);
+            setErrorUserName("");
+          }}
+        />
 
-      <div className={`my-3 flex flex-col`}>
-        <label htmlFor="price" className={`${atomLang && "text-end"} p-1`}>
-          {t("price: ")}
-        </label>
-        <input
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          id="price"
-          type="number"
-          name="price"
-          placeholder={`${t("price...")}`}
-          className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
-            atomLang && "text-end"
-          }`}
-        />
-      </div>
-      <div className={`my-3 flex flex-col`}>
-        <label
-          htmlFor="description"
-          className={`${atomLang && "text-end"} p-1`}
-        >
-          {t("description: ")}
-        </label>
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          id="description"
-          type="text"
-          name="description"
-          placeholder={`${t("description...")}`}
-          className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
-            atomLang && "text-end"
-          }`}
-        />
-      </div>
-      <div className={`my-3 flex flex-col`}>
-        <label htmlFor="category" className={`${atomLang && "text-end"} p-1`}>
-          {t("category: ")}
-        </label>
-        <input
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          id="category"
-          type="text"
-          name="category"
-          placeholder={`${t("category...")}`}
-          className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
-            atomLang && "text-end"
-          }`}
-        />
-      </div>
-      <div className={`my-3 flex flex-col`}>
-        <label htmlFor="iamge" className={`${atomLang && "text-end"} p-1`}>
-          {t("iamge: ")}
-        </label>
-        <input
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          id="iamge"
-          type="url"
-          name="iamge"
-          placeholder={`${t("image...")}`}
-          className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
-            atomLang && "text-end"
-          }`}
-        />
-      </div>
-      <div className={`my-3 flex flex-col`}>
-        <label htmlFor="rate" className={`${atomLang && "text-end"} p-1`}>
-          {t("rating: ")}
-        </label>
-        <div className="flex justify-around flex-wrap gap-2 px-2">
+        {errorUserName && (
+          <h6
+            className={`bg-red-400 text-white text-center mt-2 py-1 rounded-md`}
+          >
+            {t(errorUserName)}
+          </h6>
+        )}
+
+        <div className={`my-3 flex flex-col`}>
+          <label htmlFor="password" className={`${atomLang && "text-end"} p-1`}>
+            {t("Password: ")}
+          </label>
           <input
-            value={rate}
-            onChange={(e) => setRate(e.target.value)}
-            id="rate"
-            type="number"
-            name="rate"
-            placeholder={`${t("rate...")}`}
+            id="password"
+            type="password"
+            name="password"
             className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
               atomLang && "text-end"
             }`}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setErrorPassword("");
+            }}
           />
-          <input
-            value={count}
-            onChange={(e) => setCount(e.target.value)}
-            id="count"
-            type="number"
-            name="count"
-            placeholder={`${t("count...")}`}
-            className={`bg-gray-200 focus:bg-white border p-2 rounded-lg ${
-              atomLang && "text-end"
-            }`}
-          />
+          {errorPassword && (
+            <h6
+              className={`bg-red-400 text-white text-center mt-2 py-1 rounded-md`}
+            >
+              {t(errorPassword)}
+            </h6>
+          )}
         </div>
-      </div>
-      <input
-        onClick={(e) => submit(e)}
-        type={`submit`}
-        value={`${t("Add a product")}`}
-        className={`p-2 fs-4 bg-blue-200 hover:bg-blue-700 hover:text-white transition-shadow rounded-lg`}
-      />
-    </form>
+        <input
+          onClick={(e) => submit(e)}
+          type={`submit`}
+          value={`${t("Sign in")}`}
+          className={`p-2 fs-4 bg-blue-200 hover:bg-blue-700 hover:text-white transition-shadow rounded-lg`}
+        />
+      </form>
+    </>
   );
 }
 
-export default dashpordAddProdect;
+export default admin;

@@ -33,10 +33,13 @@ export default function ProdauctSingle({ routId }) {
   // Get Product
   const [dablicatProdectCount, setDablicatProdectCount] = useState(0);
   const [dablicatProdect, setDablicatProdect] = useState([]);
+  const [chackAdmin, setChackAdmin] = useState("");
 
   useEffect(() => {
     const signin2 = localStorage.getItem("signin");
     const item = localStorage.getItem("name");
+    const chackAdmin = localStorage.getItem("admin");
+    setChackAdmin(chackAdmin);
     setSignIn(item);
     setSignIn2(signin2);
     axios({
@@ -62,7 +65,7 @@ export default function ProdauctSingle({ routId }) {
         progress: undefined,
         theme: "light",
       });
-      router.push("/cart")
+      router.push("/cart");
     } else {
       toast.warn(t("You must login first!"), {
         position: atomLang ? "top-left" : "top-right",
@@ -208,7 +211,7 @@ export default function ProdauctSingle({ routId }) {
                 </button>
               ) : (
                 <button
-                  onClick={()=>router.push("/signin")}
+                  onClick={() => router.push("/signin")}
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                 >
                   {t("Log in to place an order!")}

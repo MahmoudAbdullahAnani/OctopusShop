@@ -12,8 +12,6 @@ import LodingDataHome from "./LodingDataHome";
 export var dataPase= []
 
 export default function CardHome() {
-  // const [prodactGet, setProdactsAtom] = useRecoilState(getProducts);
-  // const [isProdacts, setIsProdacrs] = useState(false)
   // Get Chaek i18n
   const [atomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();
