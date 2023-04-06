@@ -5,8 +5,10 @@ import { useRecoilState } from "recoil";
 import { textState } from "../Data/AtomLang";
 import FormaterPrice from "../FormatNumber/numFormat";
 import styles from "../styles/cardes.module.scss";
+import { useRouter } from "next/router";
 
 const SingleCard = ({ prodacts, categories }) => {
+  const router = useRouter()
   // Get i18n
   const [atomLang] = useRecoilState(textState);
   const [t, i18n] = useTranslation();
@@ -183,6 +185,7 @@ const SingleCard = ({ prodacts, categories }) => {
               {
                 <div className="mt-5">
                   <p
+                    onClick={() => router.push(`/single/${id}`)}
                     className={`btn text-center w-100  bg-primary text-white absolute bottom-0 `}
                   >
                     {t("Add to cart")}

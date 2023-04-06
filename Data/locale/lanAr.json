@@ -1,126 +1,152 @@
 {
-    "Hello":"هلا",
-    "Home":"الصفحة الرئيسية",
-    "women":"نساء",
-    "men":"رجال",
-    "Sign in":"تسجيل دخول",
-    "Company":"شركة",
-    "Stores":"متاجر",
-    "Create account":"انشاء حساب",
-    "Clothes":"ملابس",
-    "Shoes":"احذية",
-    "Hours":"ساعات",
-    "Computers":"اجهزة حاسب",
-    "Electrical equipment":"معدات كهرباء",
-    "Clothing":"ملابس",
-    "Tops":"بلايز",
-    "Dresses":"فساتين",
-    "Pants":"بنطال",
-    "Denim":"قماش",
-    "Sweaters":"البلوزات",
-    "T-Shirts":"قمصان",
-    "Jackets":"جاكيتات",
-    "Accessories":"مستلزمات",
-    "Watches":"ساعات",
-    "Wallets":"محافظ",
-    "Sunglasses":"نظارة شمسيه",
-    "Hats":"القبعات",
-    "Belts":"أحزمة",
-    "Brands":"العلامات التجارية",
-    "Giorgio Armani":"جورجيو أرماني",
-    "Ralph Lauren":"رالف لورين",
-    "Gucci":"غوتشي",
-    "Dolce & Gabbana":"دولتشي أند غابانا",
-    "barbaric":"بربري",
-    "Oscar de la Renta":"أوسكار دي لا رنتا",
-    "Salvatore Ferragamo":"سالفاتور فيراغامو",
-    "Tom Ford":"توم فورد",
-    "New Arrivals":"الجديد",
-    "Shop now":"تسوق الان",
-    "Shop with octopus-shop":"تسوق مع متجر الأخطبوط",
-    "With octopus-shop you can shop as you like and you will find what you are looking for.":"مع متجر الأخطبوط يمكنك التسوق كما تريد وستجد ما تبحث عنه",
-    "Get":"احصل علي",
-    "a boost":"دفعة",
-    "Variety of our products":"مجموعة متنوعة من منتجاتنا",
-    "© 2022 Copyright : Mahmoud Abdullah Anani":"كل الحقوق محفوظة © 2023 : محمود عبدالله عناني",
-    "Send":"ارسال",
-    "You can send it whatever you feel or any note":"يمكنك إرسالها ما تشعر به أو أي ملاحظة",
-    "you want to leave for us to develop, or if you want":"تريد أن تتركها لنا لكي نتطور ، أو إذا أردت",
-    "something specific, we can respond within 2 to 4 hours.":"شيء محدد ، يمكننا الرد في غضون 2 إلى 4 ساعات",
-    "Send Message":"أرسل رسالة",
-    "Write your message...":"...اكتب رسالتك",
-    "Submission failed, write a complete message🥺":"🥺فشل التقديم ، أكتب رسالة كاملة",
-    "Successful submission🥳":"🥳تم الارسال بنجاح",
-    "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops":"حقيبة ظهر قابلة للطي رقم 1 ، تناسب 15 جهاز كمبيوتر محمول",
-    "Mens Casual Premium Slim Fit T-Shirts":"تي شيرت رجالي كاجوال بريميوم بقصة ضيقة",
-    "Mens Cotton Jacket":"جاكيت قطن رجالي",
-    "Mens Casual Slim Fit":"رجالي عادية سليم صالح",
-    "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet":"سوار سلسلة Legends Naga Gold & Silver Dragon من John Hardy للسيدات",
-    "Solid Gold Petite Micropave":"Micropave صغير من الذهب الخالص",
-    "White Gold Plated Princess":"أميرة مطلية بالذهب الأبيض",
-    "Pierced Owl Rose Gold Plated Stainless Steel Double":"بومة مثقوبة مطلية بالذهب الوردي ستانلس ستيل مزدوج",
-    "WD 2TB Elements Portable External Hard Drive - USB 3.0 ":"محرك الأقراص الصلبة الخارجي المحمول WD 2TB Elements - USB 3.0",
-    "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s":"سانديسك إس إس دي بلس 1 تيرابايت داخلي SSD - SATA III 6 جيجابت / ثانية",
-    "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5":"محرك أقراص Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive":"محرك أقراص WD 4TB للألعاب يعمل مع محرك الأقراص الصلبة الخارجي المحمول لجهاز Playstation 4",
-    "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin":"ايسر SB220Q bi 21.5 بوصة Full HD (1920 x 1080) IPS Ultra-Thin",
-    "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ":"شاشة الألعاب المنحنية Samsung CHG90 144 هرتز مقاس 49 بوصة (LC49HG90DMNXZA) - شاشة فائقة الدقة QLED",
-    "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats":"معاطف شتوية من BIYLACLESEN 3 في 1 على الجليد",
-    "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket":"جاكيت للدراجات النارية من Lock and Love قابل للإزالة من الجلد الصناعي بقلنسوة للنساء",
-    "Rain Jacket Women Windbreaker Striped Climbing Raincoats":"سترة المطر المرأة سترة واقية مخطط تسلق معطف واق من المطر",
-    "MBJ Women's Solid Short Sleeve Boat Neck V ":"MBJ المرأة الصلبة قصيرة الأكمام قارب الرقبة الخامس",
-    "Opna Women's Short Sleeve Moisture":"الترطيب قصير الأكمام للنساء من Opna",
-    "DANVOUY Womens T Shirt Casual Cotton Short":"DANVOUY إمرأة T قميص كاجوال قطن قصير",
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday":"حقيبتك المثالية للاستخدام اليومي والمشي في الغابة. قم بتخزين الكمبيوتر المحمول الخاص بك (حتى 15 بوصة) في الكم المبطّن ، كل يوم",
-    "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.":"تصميم نحيف ، وأكمام طويلة راجلان متباينة ، وفتحة هينلي بثلاثة أزرار ، وخفيفة الوزن ونسيج ناعم للتنفس والارتداء المريح. وقمصان مخيطة صلبة برقبة دائرية مصنوعة من أجل المتانة ومناسبة تمامًا للملابس غير الرسمية وعشاق البيسبول المتعصبين. يشتمل خط العنق الدائري بنمط Henley على فتحة بثلاثة أزرار.",
-    "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.":"سترات خارجية رائعة لفصل الربيع / الخريف / الشتاء ، مناسبة للعديد من المناسبات ، مثل العمل ، والمشي لمسافات طويلة ، والتخييم ، وتسلق الجبال / الصخور ، وركوب الدراجات ، والسفر أو في الهواء الطلق. هدية جيدة لك أو لأفراد عائلتك. حب دافئ من القلب للأب أو الزوج أو الابن في عيد الشكر أو عيد الميلاد هذا.",
-    "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.":"يمكن أن يختلف اللون قليلاً بين على الشاشة وفي الممارسة. / يرجى ملاحظة أن هياكل الجسم تختلف باختلاف الشخص ، لذلك ، يجب مراجعة معلومات الحجم التفصيلية أدناه في وصف المنتج.",
-    "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.":"من مجموعة Legends Collection ، استوحى Naga من تنين الماء الأسطوري الذي يحمي لؤلؤة المحيط. البس الوجه للداخل لينعم بالحب والوفرة ، أو بالخارج للحماية.",
-    "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.":"الرضا مضمون. قم بإرجاع أو استبدال أي طلب خلال 30 يومًا من تصميم وبيع مركز حفيظ في الولايات المتحدة. الرضا مضمون. استرجع أو استبدل أي طلب خلال 30 يومًا.",
-    "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...":"خاتم الوعد الماس سوليتير الخطوبة الكلاسيكي الكلاسيكي لها. هدايا تفسد حبك أكثر للخطوبة والزفاف والذكرى السنوية وعيد الحب ...",
-    "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel":"أقراط نفق مزدوجة مطلية بالذهب الوردي. مصنوع من الفولاذ المقاوم للصدأ 316 لتر",
-    "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system":"التوافق مع USB 3.0 و USB 2.0 نقل البيانات السريع يحسن أداء الكمبيوتر عالي السعة ؛ NTFS مهيأ التوافق لأنظمة التشغيل Windows 10 و Windows 8.1 و Windows 7 ؛ قد تكون إعادة التهيئة مطلوبة لأنظمة التشغيل الأخرى ؛ قد يختلف التوافق اعتمادًا على تكوين الأجهزة ونظام التشغيل الخاص بالمستخدم",
-    "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)":"ترقية سهلة للتمهيد والإغلاق وتحميل التطبيقات والاستجابة بشكل أسرع (مقارنة بمحرك الأقراص الثابتة 5400 RPM SATA 2.5 بوصة ؛ استنادًا إلى المواصفات المنشورة واختبارات قياس الأداء الداخلية باستخدام نتائج PCMark vantage) يعزز أداء الكتابة المتواصل ، مما يجعله مثاليًا لأحمال عمل الكمبيوتر النموذجية التوازن المثالي بين الأداء والموثوقية سرعات قراءة / كتابة تصل إلى 535 ميجابايت / ثانية / 450 ميجابايت / ثانية (بناءً على الاختبار الداخلي ؛ قد يختلف الأداء حسب سعة محرك الأقراص والجهاز المضيف ونظام التشغيل والتطبيق.)",
-    "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.":"يتم تطبيق فلاش NAND ثلاثي الأبعاد لتوفير سرعات نقل عالية سرعات نقل ملحوظة تتيح بدء تشغيل أسرع وتحسين أداء النظام بشكل عام. تتيح تقنية SLC Cache المتقدمة تعزيز الأداء وعمر أطول بتصميم نحيف 7 مم مناسب لأجهزة Ultrabooks وأجهزة الكمبيوتر المحمولة فائقة النحافة. يدعم أمر TRIM وتقنية تجميع القمامة و RAID و ECC (فحص الأخطاء وتصحيحها) لتوفير الأداء الأمثل والموثوقية المحسنة.",
-    "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty":"قم بتوسيع تجربة ألعاب PS4 الخاصة بك ، العب في أي مكان بسرعة وسهولة ، الإعداد تصميم أنيق بسعة عالية ، ضمان محدود من الشركة المصنعة لمدة 3 سنوات",
-    "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz":"21. شاشة عريضة عالية الدقة بالكامل مقاس 5 بوصات (1920 × 1080) بتقنية IPS وتقنية Radeon free Sync. لا يوجد توافق مع معدل تحديث VESA Mount: 75 هرتز - باستخدام منفذ HDMI تصميم بدون إطار | رقيقة جدا | وقت استجابة 4 مللي ثانية | نسبة العرض إلى الارتفاع للوحة IPS - 16: 9. الألوان المدعومة - 16. 7 مليون لون. السطوع - 250 نيت زاوية الميل -5 درجة إلى 15 درجة. زاوية الرؤية الأفقية 178 درجة. زاوية الرؤية العمودية 178 درجة 75 هيرتز",
-    "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag":"شاشة ألعاب منحنية مقاس 49 بوصة بدقة فائقة تبلغ 32: 9 مزودة بشاشة مزدوجة مقاس 27 بوصة جنبًا إلى جنب بتقنية QUANTUM DOT (QLED) ودعم HDR ومعايرة المصنع توفر ألوانًا واقعية بشكل مذهل ودقيقة وتباين 144 هرتز معدل تحديث عالٍ ووقت استجابة سريع للغاية 1 مللي ثانية يعمل على القضاء على ضبابية الحركة والظلال وتقليل تأخر الإدخال",
-    "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates":"ملاحظة: السترات هي المقاس القياسي للولايات المتحدة ، يرجى اختيار المقاس كالمقاس المعتاد للارتداء الخامة: 100٪ بوليستر ؛ نسيج بطانة قابل للفصل: صوف دافئ. بطانة وظيفية قابلة للفصل: صديقة للبشرة وخفيفة الوزن ودافئة ، وستاند ياقة مبطن ، تبقيك دافئًا في الطقس البارد. جيوب بسحاب: 2 جيوب يد بسحاب ، جيبان بسحاب على الصدر (يكفي للاحتفاظ بالبطاقات أو المفاتيح) وجيب مخفي من الداخل ، جيوب يد بسحاب وجيب مخفي تحافظ على أغراضك آمنة. تصميم متوافق مع البشر: غطاء قابل للتعديل وقابل للفصل وسوار قابل للتعديل لمنع الرياح والمياه ، من أجل نوبة مريحة. 3 في 1 تصميم قابل للفصل يوفر مزيدًا من الراحة ، يمكنك فصل المعطف والداخلي حسب الحاجة ، أو ارتدائه معًا. إنها مناسبة لمختلف المواسم وتساعدك على التكيف مع المناخات المختلفة",
-    "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON":"100٪ بولي يوريثين (صدفة) 100٪ بوليستر (بطانة) 75٪ بوليستر 25٪ قطن (سترة) ، مادة جلد صناعي للأناقة والراحة / 2 جيوب أمامية ، 2-For-One مقنعين سترة من الجلد الصناعي ، تفاصيل زر على خياطة الخصر / التفاصيل على الجانبين ، غسيل يدوي فقط / لا تستخدم التبييض / تجفيف الخط / لا تقم بالحديد",
-    "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.":"مثالي خفيف الوزن للرحلات أو الملابس غير الرسمية - أكمام طويلة مع تصميم خصر برباط قابل للتعديل وغطاء للرأس. معطف واق من المطر للإغلاق من الأمام بأزرار وسحاب ، مخطط بالكامل ومبطن ومعطف واق من المطر به جيوب جانبية بحجم جيد لاستيعاب جميع أنواع الأشياء ، فهو يغطي الوركين ، والغطاء واسع ولكن لا يفرط في ذلك. تمنحه الأربطة القابلة للتعديل مظهرًا أنيقًا حقيقيًا.",
-    "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem":"95٪ رايون 5٪ سباندكس ، صنع في الولايات المتحدة الأمريكية أو مستورد ، لا تستخدم المبيض ، قماش خفيف الوزن مع مرونة كبيرة للراحة ، مضلع على الأكمام وخط العنق / خياطة مزدوجة على الحاشية السفلية",
-    "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort":"100٪ بوليستر ، يغسل بالغسالة ، 100٪ بوليستر كاتيوني داخلي ، يغسل بالغسالة ومنكمش مسبقًا للحصول على مقاس رائع وخفيف الوزن وفسيح وقابل للتهوية بدرجة عالية مع نسيج ماص للرطوبة يساعد على إبقاء الرطوبة بعيدًا ، قماش ناعم خفيف الوزن مع ياقة مريحة على شكل V تصميم أنحف ، يعطي صورة ظلية أكثر أناقة وأكثر أنوثة وراحة إضافية",
-    "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.":"95٪ قطن ، 5٪ سباندكس ، الميزات: كاجوال ، كم قصير ، طباعة حروف ، رقبة على شكل V ، تيشيرت عصري ، القماش ناعم وله بعض التمدد. ، المناسبة: كاجوال / مكتب / شاطئ / مدرسة / منزل / شارع. الموسم: الربيع ، الصيف ، الخريف ، الشتاء.",
-    "Log out":"تسجيل خروج",
-    "Are you sure?":"هل انت متأكد؟",
-    "You won't be able to revert this!":"لن تتمكن من التراجع عن هذا!",
-    "Yes, Log Out!":"نعم ، تسجيل الخروج!",
-    "Cancel":"إلغاء",
-    "There is no user with this data":"لا يوجد مستخدم بهذه البيانات",
+    "Hello": "هلا",
+    "Home": "الصفحة الرئيسية",
+    "women": "نساء",
+    "men": "رجال",
+    "Sign in": "تسجيل دخول",
+    "Company": "شركة",
+    "Stores": "متاجر",
+    "Create account": "انشاء حساب",
+    "Clothes": "ملابس",
+    "Shoes": "احذية",
+    "Hours": "ساعات",
+    "Computers": "اجهزة حاسب",
+    "Electrical equipment": "معدات كهرباء",
+    "Clothing": "ملابس",
+    "Tops": "بلايز",
+    "Dresses": "فساتين",
+    "Pants": "بنطال",
+    "Denim": "قماش",
+    "Sweaters": "البلوزات",
+    "T-Shirts": "قمصان",
+    "Jackets": "جاكيتات",
+    "Accessories": "مستلزمات",
+    "Watches": "ساعات",
+    "Wallets": "محافظ",
+    "Sunglasses": "نظارة شمسيه",
+    "Hats": "القبعات",
+    "Belts": "أحزمة",
+    "Brands": "العلامات التجارية",
+    "Giorgio Armani": "جورجيو أرماني",
+    "Ralph Lauren": "رالف لورين",
+    "Gucci": "غوتشي",
+    "Dolce & Gabbana": "دولتشي أند غابانا",
+    "barbaric": "بربري",
+    "Oscar de la Renta": "أوسكار دي لا رنتا",
+    "Salvatore Ferragamo": "سالفاتور فيراغامو",
+    "Tom Ford": "توم فورد",
+    "New Arrivals": "الجديد",
+    "Shop now": "تسوق الان",
+    "Shop with octopus-shop": "تسوق مع متجر الأخطبوط",
+    "With octopus-shop you can shop as you like and you will find what you are looking for.": "مع متجر الأخطبوط يمكنك التسوق كما تريد وستجد ما تبحث عنه",
+    "Get": "احصل علي",
+    "a boost": "دفعة",
+    "Variety of our products": "مجموعة متنوعة من منتجاتنا",
+    "© 2022 Copyright : Mahmoud Abdullah Anani": "كل الحقوق محفوظة © 2023 : محمود عبدالله عناني",
+    "Send": "ارسال",
+    "You can send it whatever you feel or any note": "يمكنك إرسالها ما تشعر به أو أي ملاحظة",
+    "you want to leave for us to develop, or if you want": "تريد أن تتركها لنا لكي نتطور ، أو إذا أردت",
+    "something specific, we can respond within 2 to 4 hours.": "شيء محدد ، يمكننا الرد في غضون 2 إلى 4 ساعات",
+    "Send Message": "أرسل رسالة",
+    "Write your message...": "...اكتب رسالتك",
+    "Submission failed, write a complete message🥺": "🥺فشل التقديم ، أكتب رسالة كاملة",
+    "Successful submission🥳": "🥳تم الارسال بنجاح",
+    "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops": "حقيبة ظهر قابلة للطي رقم 1 ، تناسب 15 جهاز كمبيوتر محمول",
+    "Mens Casual Premium Slim Fit T-Shirts": "تي شيرت رجالي كاجوال بريميوم بقصة ضيقة",
+    "Mens Cotton Jacket": "جاكيت قطن رجالي",
+    "Mens Casual Slim Fit": "رجالي عادية سليم صالح",
+    "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet": "سوار سلسلة Legends Naga Gold & Silver Dragon من John Hardy للسيدات",
+    "Solid Gold Petite Micropave": "Micropave صغير من الذهب الخالص",
+    "White Gold Plated Princess": "أميرة مطلية بالذهب الأبيض",
+    "Pierced Owl Rose Gold Plated Stainless Steel Double": "بومة مثقوبة مطلية بالذهب الوردي ستانلس ستيل مزدوج",
+    "WD 2TB Elements Portable External Hard Drive - USB 3.0 ": "محرك الأقراص الصلبة الخارجي المحمول WD 2TB Elements - USB 3.0",
+    "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s": "سانديسك إس إس دي بلس 1 تيرابايت داخلي SSD - SATA III 6 جيجابت / ثانية",
+    "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5": "محرك أقراص Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive": "محرك أقراص WD 4TB للألعاب يعمل مع محرك الأقراص الصلبة الخارجي المحمول لجهاز Playstation 4",
+    "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin": "ايسر SB220Q bi 21.5 بوصة Full HD (1920 x 1080) IPS Ultra-Thin",
+    "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ": "شاشة الألعاب المنحنية Samsung CHG90 144 هرتز مقاس 49 بوصة (LC49HG90DMNXZA) - شاشة فائقة الدقة QLED",
+    "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats": "معاطف شتوية من BIYLACLESEN 3 في 1 على الجليد",
+    "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket": "جاكيت للدراجات النارية من Lock and Love قابل للإزالة من الجلد الصناعي بقلنسوة للنساء",
+    "Rain Jacket Women Windbreaker Striped Climbing Raincoats": "سترة المطر المرأة سترة واقية مخطط تسلق معطف واق من المطر",
+    "MBJ Women's Solid Short Sleeve Boat Neck V ": "MBJ المرأة الصلبة قصيرة الأكمام قارب الرقبة الخامس",
+    "Opna Women's Short Sleeve Moisture": "الترطيب قصير الأكمام للنساء من Opna",
+    "DANVOUY Womens T Shirt Casual Cotton Short": "DANVOUY إمرأة T قميص كاجوال قطن قصير",
+    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday": "حقيبتك المثالية للاستخدام اليومي والمشي في الغابة. قم بتخزين الكمبيوتر المحمول الخاص بك (حتى 15 بوصة) في الكم المبطّن ، كل يوم",
+    "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.": "تصميم نحيف ، وأكمام طويلة راجلان متباينة ، وفتحة هينلي بثلاثة أزرار ، وخفيفة الوزن ونسيج ناعم للتنفس والارتداء المريح. وقمصان مخيطة صلبة برقبة دائرية مصنوعة من أجل المتانة ومناسبة تمامًا للملابس غير الرسمية وعشاق البيسبول المتعصبين. يشتمل خط العنق الدائري بنمط Henley على فتحة بثلاثة أزرار.",
+    "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.": "سترات خارجية رائعة لفصل الربيع / الخريف / الشتاء ، مناسبة للعديد من المناسبات ، مثل العمل ، والمشي لمسافات طويلة ، والتخييم ، وتسلق الجبال / الصخور ، وركوب الدراجات ، والسفر أو في الهواء الطلق. هدية جيدة لك أو لأفراد عائلتك. حب دافئ من القلب للأب أو الزوج أو الابن في عيد الشكر أو عيد الميلاد هذا.",
+    "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.": "يمكن أن يختلف اللون قليلاً بين على الشاشة وفي الممارسة. / يرجى ملاحظة أن هياكل الجسم تختلف باختلاف الشخص ، لذلك ، يجب مراجعة معلومات الحجم التفصيلية أدناه في وصف المنتج.",
+    "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.": "من مجموعة Legends Collection ، استوحى Naga من تنين الماء الأسطوري الذي يحمي لؤلؤة المحيط. البس الوجه للداخل لينعم بالحب والوفرة ، أو بالخارج للحماية.",
+    "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.": "الرضا مضمون. قم بإرجاع أو استبدال أي طلب خلال 30 يومًا من تصميم وبيع مركز حفيظ في الولايات المتحدة. الرضا مضمون. استرجع أو استبدل أي طلب خلال 30 يومًا.",
+    "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...": "خاتم الوعد الماس سوليتير الخطوبة الكلاسيكي الكلاسيكي لها. هدايا تفسد حبك أكثر للخطوبة والزفاف والذكرى السنوية وعيد الحب ...",
+    "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel": "أقراط نفق مزدوجة مطلية بالذهب الوردي. مصنوع من الفولاذ المقاوم للصدأ 316 لتر",
+    "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system": "التوافق مع USB 3.0 و USB 2.0 نقل البيانات السريع يحسن أداء الكمبيوتر عالي السعة ؛ NTFS مهيأ التوافق لأنظمة التشغيل Windows 10 و Windows 8.1 و Windows 7 ؛ قد تكون إعادة التهيئة مطلوبة لأنظمة التشغيل الأخرى ؛ قد يختلف التوافق اعتمادًا على تكوين الأجهزة ونظام التشغيل الخاص بالمستخدم",
+    "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)": "ترقية سهلة للتمهيد والإغلاق وتحميل التطبيقات والاستجابة بشكل أسرع (مقارنة بمحرك الأقراص الثابتة 5400 RPM SATA 2.5 بوصة ؛ استنادًا إلى المواصفات المنشورة واختبارات قياس الأداء الداخلية باستخدام نتائج PCMark vantage) يعزز أداء الكتابة المتواصل ، مما يجعله مثاليًا لأحمال عمل الكمبيوتر النموذجية التوازن المثالي بين الأداء والموثوقية سرعات قراءة / كتابة تصل إلى 535 ميجابايت / ثانية / 450 ميجابايت / ثانية (بناءً على الاختبار الداخلي ؛ قد يختلف الأداء حسب سعة محرك الأقراص والجهاز المضيف ونظام التشغيل والتطبيق.)",
+    "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.": "يتم تطبيق فلاش NAND ثلاثي الأبعاد لتوفير سرعات نقل عالية سرعات نقل ملحوظة تتيح بدء تشغيل أسرع وتحسين أداء النظام بشكل عام. تتيح تقنية SLC Cache المتقدمة تعزيز الأداء وعمر أطول بتصميم نحيف 7 مم مناسب لأجهزة Ultrabooks وأجهزة الكمبيوتر المحمولة فائقة النحافة. يدعم أمر TRIM وتقنية تجميع القمامة و RAID و ECC (فحص الأخطاء وتصحيحها) لتوفير الأداء الأمثل والموثوقية المحسنة.",
+    "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty": "قم بتوسيع تجربة ألعاب PS4 الخاصة بك ، العب في أي مكان بسرعة وسهولة ، الإعداد تصميم أنيق بسعة عالية ، ضمان محدود من الشركة المصنعة لمدة 3 سنوات",
+    "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz": "21. شاشة عريضة عالية الدقة بالكامل مقاس 5 بوصات (1920 × 1080) بتقنية IPS وتقنية Radeon free Sync. لا يوجد توافق مع معدل تحديث VESA Mount: 75 هرتز - باستخدام منفذ HDMI تصميم بدون إطار | رقيقة جدا | وقت استجابة 4 مللي ثانية | نسبة العرض إلى الارتفاع للوحة IPS - 16: 9. الألوان المدعومة - 16. 7 مليون لون. السطوع - 250 نيت زاوية الميل -5 درجة إلى 15 درجة. زاوية الرؤية الأفقية 178 درجة. زاوية الرؤية العمودية 178 درجة 75 هيرتز",
+    "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag": "شاشة ألعاب منحنية مقاس 49 بوصة بدقة فائقة تبلغ 32: 9 مزودة بشاشة مزدوجة مقاس 27 بوصة جنبًا إلى جنب بتقنية QUANTUM DOT (QLED) ودعم HDR ومعايرة المصنع توفر ألوانًا واقعية بشكل مذهل ودقيقة وتباين 144 هرتز معدل تحديث عالٍ ووقت استجابة سريع للغاية 1 مللي ثانية يعمل على القضاء على ضبابية الحركة والظلال وتقليل تأخر الإدخال",
+    "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates": "ملاحظة: السترات هي المقاس القياسي للولايات المتحدة ، يرجى اختيار المقاس كالمقاس المعتاد للارتداء الخامة: 100٪ بوليستر ؛ نسيج بطانة قابل للفصل: صوف دافئ. بطانة وظيفية قابلة للفصل: صديقة للبشرة وخفيفة الوزن ودافئة ، وستاند ياقة مبطن ، تبقيك دافئًا في الطقس البارد. جيوب بسحاب: 2 جيوب يد بسحاب ، جيبان بسحاب على الصدر (يكفي للاحتفاظ بالبطاقات أو المفاتيح) وجيب مخفي من الداخل ، جيوب يد بسحاب وجيب مخفي تحافظ على أغراضك آمنة. تصميم متوافق مع البشر: غطاء قابل للتعديل وقابل للفصل وسوار قابل للتعديل لمنع الرياح والمياه ، من أجل نوبة مريحة. 3 في 1 تصميم قابل للفصل يوفر مزيدًا من الراحة ، يمكنك فصل المعطف والداخلي حسب الحاجة ، أو ارتدائه معًا. إنها مناسبة لمختلف المواسم وتساعدك على التكيف مع المناخات المختلفة",
+    "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON": "100٪ بولي يوريثين (صدفة) 100٪ بوليستر (بطانة) 75٪ بوليستر 25٪ قطن (سترة) ، مادة جلد صناعي للأناقة والراحة / 2 جيوب أمامية ، 2-For-One مقنعين سترة من الجلد الصناعي ، تفاصيل زر على خياطة الخصر / التفاصيل على الجانبين ، غسيل يدوي فقط / لا تستخدم التبييض / تجفيف الخط / لا تقم بالحديد",
+    "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.": "مثالي خفيف الوزن للرحلات أو الملابس غير الرسمية - أكمام طويلة مع تصميم خصر برباط قابل للتعديل وغطاء للرأس. معطف واق من المطر للإغلاق من الأمام بأزرار وسحاب ، مخطط بالكامل ومبطن ومعطف واق من المطر به جيوب جانبية بحجم جيد لاستيعاب جميع أنواع الأشياء ، فهو يغطي الوركين ، والغطاء واسع ولكن لا يفرط في ذلك. تمنحه الأربطة القابلة للتعديل مظهرًا أنيقًا حقيقيًا.",
+    "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem": "95٪ رايون 5٪ سباندكس ، صنع في الولايات المتحدة الأمريكية أو مستورد ، لا تستخدم المبيض ، قماش خفيف الوزن مع مرونة كبيرة للراحة ، مضلع على الأكمام وخط العنق / خياطة مزدوجة على الحاشية السفلية",
+    "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort": "100٪ بوليستر ، يغسل بالغسالة ، 100٪ بوليستر كاتيوني داخلي ، يغسل بالغسالة ومنكمش مسبقًا للحصول على مقاس رائع وخفيف الوزن وفسيح وقابل للتهوية بدرجة عالية مع نسيج ماص للرطوبة يساعد على إبقاء الرطوبة بعيدًا ، قماش ناعم خفيف الوزن مع ياقة مريحة على شكل V تصميم أنحف ، يعطي صورة ظلية أكثر أناقة وأكثر أنوثة وراحة إضافية",
+    "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.": "95٪ قطن ، 5٪ سباندكس ، الميزات: كاجوال ، كم قصير ، طباعة حروف ، رقبة على شكل V ، تيشيرت عصري ، القماش ناعم وله بعض التمدد. ، المناسبة: كاجوال / مكتب / شاطئ / مدرسة / منزل / شارع. الموسم: الربيع ، الصيف ، الخريف ، الشتاء.",
+    "Log out": "تسجيل خروج",
+    "Are you sure?": "هل انت متأكد؟",
+    "You won't be able to revert this!": "لن تتمكن من التراجع عن هذا!",
+    "Yes, Log Out!": "نعم ، تسجيل الخروج!",
+    "Cancel": "إلغاء",
+    "There is no user with this data": "لا يوجد مستخدم بهذه البيانات",
     "User Name:": ":اسم المستخدم",
-    "User Name...":"...اسم المستخدم",
-    "There must be a User Name":"يجب أن يكون هناك اسم مستخدم",
-    "There must be a Password":"يجب أن يكون هناك كلمة مرور",
-    "Password: ":":كلمة المرور",
-    "Create Account":"إنشاء حساب",
-    "Name: ":":الاسم",
-    "Name...":"...الاسم",
-    "The password must be longer than five letters or numbers":"يجب أن تكون كلمة المرور أطول من خمسة أحرف أو أرقام",
-    "electronics":"إلكترونيات",
-    "jewelery":"مجوهرات",
-    "men's clothing":"ملابس رجالية",
-    "women's clothing":"ملابس نسائية",
-    "All":"الكل",
-    "Add to cart":"أضف إلى السلة",
-    "filter":"تصفية",
-    "Reset":"إعادة ضبط",
-    "max price":"اكبر قيمة",
+    "User Name...": "...اسم المستخدم",
+    "There must be a User Name": "يجب أن يكون هناك اسم مستخدم",
+    "There must be a Password": "يجب أن يكون هناك كلمة مرور",
+    "Password: ": ":كلمة المرور",
+    "Create Account": "إنشاء حساب",
+    "Name: ": ":الاسم",
+    "Name...": "...الاسم",
+    "The password must be longer than five letters or numbers": "يجب أن تكون كلمة المرور أطول من خمسة أحرف أو أرقام",
+    "electronics": "إلكترونيات",
+    "jewelery": "مجوهرات",
+    "men's clothing": "ملابس رجالية",
+    "women's clothing": "ملابس نسائية",
+    "All": "الكل",
+    "Add to cart": "أضف إلى السلة",
+    "filter": "تصفية",
+    "Reset": "إعادة ضبط",
+    "max price": "اكبر قيمة",
     "min price": "اقل قيمة",
-    "Add to bag":"أضف الى الحقيبة",
-    "Size guide":"دليل المقاسات",
-    "Mens Casual Premium Slim Fit T-Shirts ":"قمصان رجالي عادية بقصة ضيقة",
-    "Solid Gold Petite Micropave ":"ميكروراف صغير من الذهب الخالص",
-    "You must login first!":"!يجب عليك تسجيل الدخول اولا",
-    "Added successfully":"تمت الاضافة بنجاح",
-    "Log in to place an order!":"!تسجيل الدخول لتقديم طلب"
+    "Add to bag": "أضف الى الحقيبة",
+    "Size guide": "دليل المقاسات",
+    "Mens Casual Premium Slim Fit T-Shirts ": "قمصان رجالي عادية بقصة ضيقة",
+    "Solid Gold Petite Micropave ": "ميكروراف صغير من الذهب الخالص",
+    "You must login first!": "!يجب عليك تسجيل الدخول اولا",
+    "Added successfully": "تمت الاضافة بنجاح",
+    "Log in to place an order!": "!تسجيل الدخول لتقديم طلب",
+    "Total": "الاجمالي",
+    "Title": "اسم الصنف",
+    "Price": "السعر",
+    "Category": "نوع الصنف",
+    "Image": "صورة الصنف",
+    "Rating": "تقييم الصنف",
+    "Delete": "حذف",
+    "title:  ":" :عنونان المنتج",
+    "title...":"...العنوان",
+    "price: ":":السعر",
+    "price...":"...السعر",
+    "description: ":" :التفاصيل",
+    "description":"التفاصيل",
+    "description...":"...التفاصيل",
+    "category: ":":نوع الصنف",
+    "category":"نوع المنتج",
+    "category...":"...نوع المنتج",
+    "rate":"التقييم",
+    "rate...":"...التقييم",
+    "count...":"...عدد",
+    "rating: ":":التقييمات",
+    "Add Product":"اضافة منتج",
+    "image...":"...عنوان الصورة",
+    "iamge":"صورة",
+    "iamge: ":" :الصورة",
+    "Add a product":"اضافة منتج"
 }

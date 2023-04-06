@@ -18,12 +18,12 @@ const ProdactsSlice = createSlice({
       product.push(action.payload);
     },
     removeProduct: (product, action) => {
-      product=product.filter((prod) => {
-        return prod.id !== action.payload;
+      return product.filter((prod) => {
+        return prod.id != action.payload;
       });
       // product.push(action.payload);
     },
-    clareProduct: (product, action) => {
+    clareProduct: (product,) => {
       return (product = []);
     },
   },

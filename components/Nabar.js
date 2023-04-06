@@ -14,8 +14,8 @@ import { getProducts, scurityCard, textState, userSign } from "../Data/AtomLang"
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useRouter } from "next/router";
 
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+// import Button from "react-bootstrap/Button";
+// import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
 import { clareProduct } from "../rdx/Actions/prodectsCard";
@@ -25,7 +25,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const [scurCard, setScurityCard] = useRecoilState(scurityCard);
+  const [, setScurityCard] = useRecoilState(scurityCard);
   const prodectsCard = useSelector((store) => store.ProdactsSlice);
   const dispatch = useDispatch();
     const router = useRouter();
@@ -51,14 +51,7 @@ export default function Navbar() {
       }
     });
   };
-const [allCountProduct,setAllCountProduct] = useState(0)
-//   const calcAllCart = () => {
-//      prodectsCard.map((pro) => {
-//        setAllCountProduct(pro.cartQuantity + allCountProduct);
-//     });
-//     console.log(allCountProduct);
-// }
-  const [userSignIn, setUserSign] = useRecoilState(userSign);
+
   const [itemSignIn, setItemSignIn] = useState("");
   // Function Trans
   // Get RecoilState
@@ -690,7 +683,7 @@ const [allCountProduct,setAllCountProduct] = useState(0)
                   {itemSignIn && (
                     <div className="ml-4 flow-root lg:ml-6">
                       <Link
-                        href="#"
+                        href="/cart"
                         className="group -m-2 flex items-center p-2"
                       >
                         <ShoppingBagIcon
