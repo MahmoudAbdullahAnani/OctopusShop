@@ -28,11 +28,9 @@ export default function CardHome() {
   // https://fakestoreapi.com/products/categories
   // http://localhost:9000/categories
   const fetchCategories = () => {
-    return axios
-      .get("https://fakestoreapi.com/products/categories")
-      .then((res) => {
-        return res.data;
-      });
+    return axios.get("https://fakestoreapi.com/products/categories").then((res) => {
+      return res.data;
+    });
   };
 
   const fetchDataCategories = useQuery("Categories", fetchCategories);

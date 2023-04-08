@@ -39,12 +39,16 @@ function admin() {
     }
     if (password.length <= 2) {
       setErrorPassword(
-        "The password must be longer than five letters or numbers"
+        "The password must be longer than two letters or two numbers"
       );
     }
     if (userName && password) {
       const user = usersDB.find((user) => user.admin === true);
-      if (user.userName === userName && user.password && user.admin === true) {
+      if (
+        user.userName === userName &&
+        user.password === password &&
+        user.admin === true
+      ) {
         toast.success(t("Successful login"), {
           position: atomLang ? "top-left" : "top-right",
           autoClose: 2000,

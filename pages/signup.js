@@ -48,7 +48,7 @@ function signup() {
     }
     if (password.length <= 2) {
       return setErrorPassword(
-        t("The password must be longer than five letters or numbers")
+        t("The password must be longer than two letters or two numbers")
       );
     }
     if (userName && password) {

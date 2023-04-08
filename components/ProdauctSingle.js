@@ -46,7 +46,7 @@ export default function ProdauctSingle({ routId }) {
       method: "get",
       // https://fakestoreapi.com/products/
       // http://localhost:9000/products
-      url: `http://localhost:9000/products/${routId}`,
+      url: `https://fakestoreapi.com/products/${routId}`,
     }).then((res) => {
       setProduct(res.data);
     });

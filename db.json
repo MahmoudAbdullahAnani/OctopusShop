@@ -239,26 +239,6 @@
         "rate": 3.6,
         "count": 145
       }
-    },
-    {
-      "title": "Mahmoud Abdullah",
-      "description": "this is photo user Mahmoud Abdullah",
-      "image": "https://mahmoud-abdullah-anani.vercel.app/static/media/Home-Avtar.e6c44b9c4571ef7e70d6.jpg",
-      "price": "50",
-      "category": "Men",
-      "rate": "6",
-      "count": "13",
-      "id": 21
-    },
-    {
-      "title": "Logo",
-      "description": "this is logo",
-      "image": "https://mahmoud-abdullah-anani.vercel.app/static/media/44.5752b04524319c6cc284.png",
-      "price": "10000",
-      "category": "logo",
-      "rate": "650",
-      "count": "606",
-      "id": 22
     }
   ],
   "categories": [

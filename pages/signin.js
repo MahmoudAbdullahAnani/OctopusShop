@@ -38,7 +38,7 @@ function signin() {
     }
     if (password.length <= 2) {
       setErrorPassword(
-        "The password must be longer than five letters or numbers"
+        "The password must be longer than two letters or two numbers"
       );
     }
     if (userName && password) {

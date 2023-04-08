@@ -11,6 +11,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 import StarPurple500Icon from "@mui/icons-material/StarPurple500";
 import { clareProduct, removeProduct } from "../rdx/Actions/prodectsCard";
+import Swal from "sweetalert2";
 function cart() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const disbatch = useDispatch();
@@ -33,6 +34,47 @@ function cart() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [t, i18n] = useTranslation();
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  // Functions Delete
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+  const clearAll = () => {
+    swalWithBootstrapButtons
+      .fire({
+        title: t("Are you sure?"),
+        text: t("You won't be able to revert this!"),
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: t("Yes, delete it!  "),
+        cancelButtonText: t("No, cancel! "),
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          setTotilPrice(0);
+          disbatch(clareProduct());
+          swalWithBootstrapButtons.fire(
+            t("Deleted!"),
+            t("The product has been removed from the cart."),
+            t("success")
+          );
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            t("Cancelled"),
+            t("The product is still in the bag :)"),
+            t("error")
+          );
+        }
+      });
+    
+  };
   return (
     <>
       <div className={`container`}>
@@ -99,13 +141,7 @@ function cart() {
               </td>
               <td className="text-center  hover:bg-red-200 bg-red-400">
                 {prodectsCard.length >= 1 && (
-                  <button
-                    className="w-100 "
-                    onClick={() => {
-                      setTotilPrice(0);
-                      disbatch(clareProduct());
-                    }}
-                  >
+                  <button className="w-100 " onClick={clearAll}>
                     <DeleteForeverTwoToneIcon
                       className={`text-red-600 w-100`}
                     />
