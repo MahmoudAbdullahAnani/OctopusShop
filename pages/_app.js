@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+    <meta name="verify-admitad" content="c509b637ec" />
         <title>Octopus Shop</title>
         <meta charset="UTF-8" />
         <meta
